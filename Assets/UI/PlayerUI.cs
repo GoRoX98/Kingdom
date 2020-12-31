@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
+    Economy PlayerEconomy = new Economy();
+    public Text GoldUI;
     
 
     // Start is called before the first frame update
@@ -18,9 +21,9 @@ public class PlayerUI : MonoBehaviour
         goldText();
     }
 
-    static void goldText()
+    public void goldText()
     {
-        int goldUI;
-        goldUI = Economy.GetGold();
+        int gold = PlayerEconomy.GetGold();
+        GoldUI.text = $"Gold: {gold}";
     }
 }
