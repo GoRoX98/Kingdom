@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Build : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    StructBuild Village = new StructBuild(10, 10, 20, 100, 50, 20, 50);
+    StructBuild Farm = new StructBuild(10, 10, 20, 100, 50, 20, 50);
+    StructBuild Mine = new StructBuild(10, 10, 20, 100, 50, 20, 50);
+    public int NumBuild;
+
+    public StructBuild[] BuildingsNames;
+
+
+    private void Start()
     {
-        
+        BuildingsNames = new StructBuild[] {Village, Farm, Mine};
     }
 
-    // Update is called once per frame
-    void Update()
+    public void NewBuild()
     {
-        
+
     }
 }
