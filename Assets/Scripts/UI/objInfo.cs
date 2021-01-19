@@ -9,8 +9,15 @@ public class objInfo : MonoBehaviour
 {
     public GameObject pref;
 
+    void FixedUpdate()
+    {
+        if (Input.GetMouseButtonDown(1))    this.gameObject.GetComponent<Region>().InfoRegion();
+    }
+
     public void OnMouseDown()
     {
         Instantiate(pref);
     }
+
+
 }

@@ -32,6 +32,7 @@ public class Economy : MonoBehaviour
 
         if (timer > 8)
         {
+            UpdateIncome();
             PlayerEconomy.Income(GoldIncome, FoodIncome, PeopleIncome);
             timer = 0;
         }
@@ -52,5 +53,8 @@ public class Economy : MonoBehaviour
         return PlayerEconomy.GetPeople();
     }
 
+    public void UpdateIncome()
+    {
 
+    }
 }
