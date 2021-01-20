@@ -41,8 +41,13 @@ public class Region : MonoBehaviour
 
     }
 
-    public void InfoRegion()
+    public void InfoRegion(GameObject InfoRegion)
     {
-        print($"Информация {Regions[this.gameObject.GetComponent<Region>().TestId]}");
+        print($"Информация: {Regions[InfoRegion.GetComponent<Region>().TestId].PrintInfo()}");
+    }
+
+    public int Id()
+    {
+        return TestId;
     }
 }

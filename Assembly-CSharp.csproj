@@ -58,18 +58,19 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\UI\PlayerUI.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\World\StructRegion.cs" />
     <Compile Include="Assets\Scripts\Player\Economy\Economy.cs" />
     <Compile Include="Assets\Scripts\Player\Economy\StructBuild.cs" />
     <Compile Include="Assets\Scripts\Player\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\Player\Action.cs" />
+    <Compile Include="Assets\Scripts\Player\MyKingdom.cs" />
     <Compile Include="Assets\Scripts\Player\Economy\StructEconomy.cs" />
     <Compile Include="Assets\Scripts\UI\InteractionUI.cs" />
     <Compile Include="Assets\Scripts\UI\objInfo.cs" />
     <Compile Include="Assets\Scripts\World\Castle.cs" />
     <Compile Include="Assets\Scripts\Player\Economy\Build.cs" />
-    <Compile Include="Assets\Scripts\World\StructRegion.cs" />
     <Compile Include="Assets\Scripts\World\Region.cs" />
-    <Compile Include="Assets\Scripts\Player\MyKingdom.cs" />
+    <Compile Include="Assets\Scripts\UI\ListUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
