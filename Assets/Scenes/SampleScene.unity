@@ -514,6 +514,7 @@ GameObject:
   - component: {fileID: 1073478111}
   - component: {fileID: 1073478113}
   - component: {fileID: 1073478112}
+  - component: {fileID: 1073478114}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -557,6 +558,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70e39d92554f679429b5c9819b8fb218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1073478114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073478110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc03aa01582f8042a91dc573e689846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1382849835
@@ -630,6 +643,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1586643032}
+  - component: {fileID: 1586643033}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -656,6 +670,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1586643033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586643031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d32d3bd1087cf40b42728c610d7db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Regions: []
+  AmountOfRegions: 0
 --- !u!1 &1593173515
 GameObject:
   m_ObjectHideFlags: 0

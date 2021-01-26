@@ -9,22 +9,18 @@ using UnityEngine;
 /// </summary>
 public class Region : MonoBehaviour
 {
-
-    private GameObject[] AmountOfRegions;
     public StructRegion[] Regions;
     [SerializeField]
     private int TestId;
 
     void Start()
     {
-        AmountOfRegions = GameObject.FindGameObjectsWithTag("Region");
-        int length = AmountOfRegions.Length;
-        print(length);
-        Regions = new StructRegion[length];
-
-        for (int i = 0; i < length; i++)
+        GameObject[] RegionNum = GameObject.Find("World").GetComponent<World>().Regions;
+        int Amount = GameObject.Find("World").GetComponent<World>().AmountOfRegions;
+        Regions = new StructRegion[Amount];
+        for (int i = 0; i < Amount; i++)
         {
-            GenerateRegion(AmountOfRegions[i], i);        
+            GenerateRegion(RegionNum[i], i);        
         }
     }
 
@@ -33,11 +29,14 @@ public class Region : MonoBehaviour
 
     private void GenerateRegion(GameObject ThisRegion, int i)
     {
+        int Owner;
         ThisRegion.GetComponent<Region>().TestId = i;
         float[] coordinate = new float[2];
         coordinate[0] = ThisRegion.transform.position.x;
         coordinate[1] = ThisRegion.transform.position.y;
-        Regions[i] = new StructRegion(i, "Test Name", 0, coordinate);
+        if (i < 2) Owner = 1;
+        else Owner = 0;
+        Regions[i] = new StructRegion(i, "Test Name", 0, coordinate, Owner);
 
     }
 
@@ -49,5 +48,10 @@ public class Region : MonoBehaviour
     public int Id()
     {
         return TestId;
+    }
+
+    public int Owner(int id)
+    {
+        return Regions[id].InfoOwner();
     }
 }

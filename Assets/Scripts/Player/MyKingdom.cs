@@ -4,20 +4,43 @@ using UnityEngine;
 
 public class MyKingdom : MonoBehaviour
 {
-    private int[] MyRegions;
+    private GameObject[] MyDomain;
+    private int Amount;
+    private GameObject[] Regions;
+    private float timer = 0;
 
-    void Start()
+    void Awake()
     {
-        MyRegions = new int[50];
+        Amount = GameObject.Find("World").GetComponent<World>().AmountOfRegions;
+        Regions = GameObject.Find("World").GetComponent<World>().Regions;
+        MyDomain = new GameObject[Amount];
+        MyTerritory(MyDomain, Amount, Regions);
+        print($"My regions: {MyDomain.Length}");
     }
 
-    void Update()
+    void FixedUpdate()
     {
-
+        timer += Time.deltaTime;
+        if (timer > 2)
+        {
+            MyTerritory(MyDomain, Amount, Regions);
+            timer = 0;
+        }
     }
 
-    private void My()
+    private void MyTerritory(GameObject[] MyRegions, int Amount, GameObject[] WorldRegions)
     {
+        for (int i = 0; i < Amount; i++)
+        {
+            if (WorldRegions[i].GetComponent<Region>().Owner(i) == 1)
+            {
+                MyDomain[i] = WorldRegions[i];
+            }
+        }
+    }
 
+    public GameObject[] GetDomain()
+    {
+        return MyDomain;
     }
 }

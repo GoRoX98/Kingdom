@@ -39,7 +39,7 @@ public class objInfo : MonoBehaviour
     {
         string[] InfoRegion = gameObject.GetComponent<Region>().Regions[id].Data();
         int i = 0;
-        while (2 > i)
+        while (3 > i)
         {
             parent[i].text = InfoRegion[i];
             i++;

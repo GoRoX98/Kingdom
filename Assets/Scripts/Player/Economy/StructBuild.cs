@@ -10,7 +10,7 @@ public struct StructBuild
     /// 1-3 - инкам здания
     /// 4 - жизни
     /// 5-7 - стоимость постройки
-    /// 8 - владелец (0 - нейтральное, 1 - игрок 1, 2 - игрок 2)
+    /// 8 - id постройки
     /// </summary>
     private int food;
     private int gold;
