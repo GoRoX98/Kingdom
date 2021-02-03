@@ -31,13 +31,11 @@ public class Region : MonoBehaviour
     {
         int Owner;
         ThisRegion.GetComponent<Region>().TestId = i;
-        float[] coordinate = new float[2];
-        coordinate[0] = ThisRegion.transform.position.x;
-        coordinate[1] = ThisRegion.transform.position.y;
+        Transform position;
+        position = ThisRegion.transform;
         if (i < 2) Owner = 1;
         else Owner = 0;
-        Regions[i] = new StructRegion(i, "Test Name", 0, coordinate, Owner);
-
+        Regions[i] = new StructRegion(i, "Test Name", 0, position, Owner);
     }
 
     public void InfoRegion(GameObject InfoRegion)
