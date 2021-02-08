@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MyKingdom : MonoBehaviour
 {
+    
     private GameObject[] MyDomain;
     private int Amount;
     private GameObject[] Regions;
@@ -43,4 +44,6 @@ public class MyKingdom : MonoBehaviour
     {
         return MyDomain;
     }
+
+
 }

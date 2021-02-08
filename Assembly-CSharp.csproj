@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\World\Castle.cs" />
     <Compile Include="Assets\Scripts\Player\Economy\Build.cs" />
     <Compile Include="Assets\Scripts\World\Region.cs" />
+    <Compile Include="Assets\Scripts\World\WorldList.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

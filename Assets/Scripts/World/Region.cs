@@ -5,12 +5,14 @@ using UnityEngine;
 
 
 /// <summary>
-/// Черновая генерация параметров регионов и их присвоение к объектам на сцене
+/// Prototype of generation parametrs for regions on the scene
 /// </summary>
 public class Region : MonoBehaviour
 {
+    /// <param name = "Regions" > List of Regions on the map with self type (structure).</param>
     public StructRegion[] Regions;
     [SerializeField]
+    /// <param name="TestId"> Id of Regions. Costil for using in others scripts</param>
     private int TestId;
 
     void Start()
