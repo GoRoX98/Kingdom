@@ -38,6 +38,7 @@ public class objInfo : MonoBehaviour
     public void UpdateText(List<Text> parent, int id)
     {
         string[] InfoRegion = gameObject.GetComponent<Region>().Regions[id].Data();
+        GameObject.Find("Canvas Region").GetComponent<ListUI>().Id = id;
         int i = 0;
         while (3 > i)
         {

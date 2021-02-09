@@ -37,7 +37,7 @@ public class Region : MonoBehaviour
         position = ThisRegion.transform;
         if (i < 2) Owner = 1;
         else Owner = 0;
-        Regions[i] = new StructRegion(i, "Test Name", 0, position, Owner);
+        Regions[i] = new StructRegion(i, "Test Name", 0, position, Owner, ThisRegion);
     }
 
     public void InfoRegion(GameObject InfoRegion)
@@ -54,4 +54,6 @@ public class Region : MonoBehaviour
     {
         return Regions[id].InfoOwner();
     }
+
+    
 }

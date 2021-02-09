@@ -7,10 +7,10 @@ using UnityEngine;
 public struct StructBuild
 {
     /// <summary>
-    /// 1-3 - инкам здания
-    /// 4 - жизни
-    /// 5-7 - стоимость постройки
-    /// 8 - id постройки
+    /// 1-3 - income
+    /// 4 - life
+    /// 5-7 - cost
+    /// 8 - id of building
     /// </summary>
     private int food;
     private int gold;
@@ -31,6 +31,17 @@ public struct StructBuild
         this.PriceG = PriceG;
         this.PriceP = PriceP;
         this.id = id;
+    }
+
+    public int GetId()
+    {
+        return id;
+    }
+
+    public int[] GetIncome()
+    {
+        int[] Income = new int[3] {food, gold, people};
+        return Income;
     }
 }
 
