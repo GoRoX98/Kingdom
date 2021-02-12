@@ -7,54 +7,66 @@ using UnityEngine;
 public class Economy : MonoBehaviour
 {
     private StructEconomy PlayerEconomy;
+    private GameObject World;
 
-    private float timer = 0;
+    private int[] CurrentTime;
+    private int TempWeek = 0;
     private int GoldIncome = 10;
     private int FoodIncome = 10;
     private int PeopleIncome = 10;
 
 
-    //Инициализация экономики игрока, присовение стартовых ресурсов
+    //Create player economy, starter recources, starter income
     void Start()
     {
-        //PlayerEconomy = GetComponent<StructEconomy.Struct>();
+        World = GameObject.Find("World");
         PlayerEconomy = new StructEconomy();
-        PlayerEconomy.Income(100, 100, 100);
+        PlayerEconomy.AddFood(100);
+        PlayerEconomy.AddGold(100);
+        PlayerEconomy.AddPeople(100);
+        PlayerEconomy.SetIncome(FoodIncome, GoldIncome, PeopleIncome);
         print("Hello World");
         print(PlayerEconomy.GetGold());
     }
 
-    //Пока нету времени, подсчет экономики и таймер здесь.В дальнейшем вынести таймер для экономики.
+    //Economy update
 
     void FixedUpdate()
     {
-        timer += Time.deltaTime;
+        CurrentTime = World.GetComponent<WorldTime>().GetTime();
 
-        if (timer > 8)
+        if (TempWeek != CurrentTime[0])
         {
-            UpdateIncome();
-            PlayerEconomy.Income(GoldIncome, FoodIncome, PeopleIncome);
-            timer = 0;
+            PlayerEconomy.Income();
+            TempWeek = CurrentTime[0];
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns>How many gold player have</returns>
     public int GetGold()
     {
         return PlayerEconomy.GetGold();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns>How many food player have</returns>
     public int GetFood()
     {
         return PlayerEconomy.GetFood();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns>How many people player have</returns>
     public int GetPeople()
     {
         return PlayerEconomy.GetPeople();
     }
 
-    public void UpdateIncome()
-    {
-
-    }
 }

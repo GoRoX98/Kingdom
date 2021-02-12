@@ -9,18 +9,30 @@ public struct StructEconomy
     private int gold;
     private int people;
 
+    private int foodIncome;
+    private int goldIncome;
+    private int peopleIncome;
 
-    public void Income(int GoldIncome, int FoodIncome, int PeopleIncome)
+
+    public void Income()
     {
-        gold += GoldIncome;
-        food += FoodIncome;
-        people += PeopleIncome;
+        gold += goldIncome;
+        food += foodIncome;
+        people += peopleIncome;
     }
+
+    public void SetIncome(int Food, int Gold, int People)
+    {
+        foodIncome = Food;
+        goldIncome = Gold;
+        peopleIncome = People;
+    }
+
     public int GetGold()
     {
         return gold;
     }
-    public void SetGold(int GoldIncome)
+    public void AddGold(int GoldIncome)
     {
         gold += GoldIncome;
     }
@@ -29,7 +41,7 @@ public struct StructEconomy
     {
         return food;
     }
-    public void SetFood(int FoodIncome)
+    public void AddFood(int FoodIncome)
     {
         food += FoodIncome;
     }
@@ -38,7 +50,7 @@ public struct StructEconomy
     {
         return people;
     }
-    public void SetPeople(int PeopleIncome)
+    public void AddPeople(int PeopleIncome)
     {
         people += PeopleIncome;
     }
