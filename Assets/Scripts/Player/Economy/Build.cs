@@ -4,25 +4,54 @@ using UnityEngine;
 
 public class Build : MonoBehaviour
 {
-    StructBuild Village = new StructBuild(10, 10, 20, 100, 50, 20, 50, 0);
-    StructBuild Farm = new StructBuild(10, 10, 20, 100, 50, 20, 50, 0);
-    StructBuild Mine = new StructBuild(10, 10, 20, 100, 50, 20, 50, 0);
-    private GameObject World;
+    public GameObject World;
 
-    public StructBuild[] BuildingsNames;
-
-
-    private void Start()
-    {
-        BuildingsNames = new StructBuild[] {Village, Farm, Mine};
-        World = GameObject.Find("World");
-    }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="id">Id of selected region</param>
+    /// <param name="BuildingId">Id of future building</param>
+    /// <param name="ObjRegion">GameObject of selected region</param>
     public void NewBuild(int id, int BuildingId, GameObject ObjRegion)
     {
-        Transform Region = ObjRegion.GetComponent<Region>().Regions[id].GetPosition();
-        GameObject NewBuilding = World.GetComponent<WorldList>().Buildings[BuildingId];
-        Vector2 Pos = new Vector2(ObjRegion.transform.position.x, ObjRegion.transform.position.y + 2);
-        Instantiate(NewBuilding, Pos, Quaternion.identity, World.transform);
+        if (verifyCost(BuildingId) == true)
+        {
+            //verefy owner
+            if (ObjRegion.GetComponent<Region>().Owner(id) == 1)
+            {
+                GameObject NewBuilding = World.GetComponent<WorldList>().BuildingsGO[BuildingId];
+                Vector2 Pos = new Vector2(ObjRegion.transform.position.x, ObjRegion.transform.position.y + 1.5f);
+                Instantiate(NewBuilding, Pos, Quaternion.identity, World.transform);
+                ObjRegion.GetComponent<Region>().Buildings.Add(NewBuilding);
+            }
+            //WIP - make UI
+            else print("Not your region");
+        }
+        else print("Not enough res");
+    }
+
+    private bool verifyCost(int BuildingId)
+    {
+        int step = 0;
+        int[] playerRes = GetComponent<Economy>().PlayerEconomy.GetResources();
+        int[] cost = World.GetComponent<WorldList>().BuildingsList[BuildingId].GetCost();
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (playerRes[i] >= cost[i]) step++;
+            else 
+            {
+                if (i == 0) print("Not enough food");
+                if (i == 1) print("Not enough gold");
+                if (i == 2) print("Not enough people");
+            }
+        }
+
+        if (step == 3)
+        {
+            GetComponent<Economy>().PlayerEconomy.Spend(cost);
+            return true;
+        }
+        else return false;
     }
 }

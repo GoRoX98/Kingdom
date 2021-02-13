@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class PlayerUI : MonoBehaviour
 {
 
-    Economy PlayerEconomy;
+    
     private int[] CurrentTime;
     public GameObject Oclock;
     public GameObject World;
+    public GameObject Player;
 
     public Text GoldUI;
     public Text FoodUI;
@@ -19,7 +20,6 @@ public class PlayerUI : MonoBehaviour
 
     void Start()
     {
-        PlayerEconomy = GameObject.Find("Player").GetComponent<Economy>();
         resText();
         Clock();
     }
@@ -33,9 +33,9 @@ public class PlayerUI : MonoBehaviour
 
     public void resText()
     {
-        int gold = PlayerEconomy.GetGold();
-        int food = PlayerEconomy.GetFood();
-        int people = PlayerEconomy.GetPeople();
+        int gold = Player.GetComponent<Economy>().PlayerEconomy.GetGold();
+        int food = Player.GetComponent<Economy>().PlayerEconomy.GetFood();
+        int people = Player.GetComponent<Economy>().PlayerEconomy.GetPeople();
         GoldUI.text = $"Gold: {gold}";
         FoodUI.text = $"Food: {food}";
         PeopleUI.text = $"People: {people}";

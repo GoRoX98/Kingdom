@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3217314986919646936, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3217314986919646936, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -650,7 +650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8266866244409142949, guid: 606520a50fd5f6f42bf61e8e6946915b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8266866244409142949, guid: 606520a50fd5f6f42bf61e8e6946915b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -769,6 +769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dc03aa01582f8042a91dc573e689846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  World: {fileID: 1586643031}
 --- !u!114 &1073478115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -781,6 +782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3996e3f3f2dd2264eadc351f9675043e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  World: {fileID: 1586643031}
 --- !u!1 &1199481988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,9 +1089,9 @@ Transform:
   m_Children:
   - {fileID: 2562492199956846183}
   - {fileID: 1382849836}
-  - {fileID: 1063923862}
   - {fileID: 208121967}
   - {fileID: 1611600859}
+  - {fileID: 1063923862}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1119,7 +1121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78877b2abefc5934ca16004ae1778cac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Buildings:
+  BuildingsGO:
   - {fileID: 3907776070166230493, guid: e3032c9334e13b5468be00eedc7253f9, type: 3}
   - {fileID: 4644796403778667500, guid: c96e082eef7b2b843b1fe995b48bb8b1, type: 3}
   - {fileID: 397052264728944256, guid: 72733cd740cca4b4fa657df5b3fbc88e, type: 3}
@@ -1335,7 +1337,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3217314986919646936, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3217314986919646936, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1583,6 +1585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Oclock: {fileID: 1199481988}
   World: {fileID: 1586643031}
+  Player: {fileID: 1073478110}
   GoldUI: {fileID: 1593173517}
   FoodUI: {fileID: 311772821}
   PeopleUI: {fileID: 1779072292}

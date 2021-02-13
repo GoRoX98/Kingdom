@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEngine;
 public class Economy : MonoBehaviour
 {
-    private StructEconomy PlayerEconomy;
+    public StructEconomy PlayerEconomy;
     private GameObject World;
 
     private int[] CurrentTime;
@@ -40,33 +40,6 @@ public class Economy : MonoBehaviour
             PlayerEconomy.Income();
             TempWeek = CurrentTime[0];
         }
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns>How many gold player have</returns>
-    public int GetGold()
-    {
-        return PlayerEconomy.GetGold();
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns>How many food player have</returns>
-    public int GetFood()
-    {
-        return PlayerEconomy.GetFood();
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns>How many people player have</returns>
-    public int GetPeople()
-    {
-        return PlayerEconomy.GetPeople();
     }
 
 }

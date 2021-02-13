@@ -4,28 +4,30 @@ using UnityEngine;
 
 public class MyKingdom : MonoBehaviour
 {
-    
+    public GameObject World;
+
+
     private GameObject[] MyDomain;
     private int Amount;
     private GameObject[] Regions;
-    private float timer = 0;
+    private int TempMonth;
 
-    void Awake()
+    void Start()
     {
         Amount = GameObject.Find("World").GetComponent<World>().AmountOfRegions;
         Regions = GameObject.Find("World").GetComponent<World>().Regions;
         MyDomain = new GameObject[Amount];
+        TempMonth = World.GetComponent<WorldTime>().GetTime()[1];
         MyTerritory(MyDomain, Amount, Regions);
-        print($"My regions: {MyDomain.Length}");
     }
 
     void FixedUpdate()
     {
-        timer += Time.deltaTime;
-        if (timer > 2)
+        
+        if (TempMonth != World.GetComponent<WorldTime>().GetTime()[1])
         {
             MyTerritory(MyDomain, Amount, Regions);
-            timer = 0;
+            TempMonth = World.GetComponent<WorldTime>().GetTime()[1];
         }
     }
 
@@ -38,11 +40,6 @@ public class MyKingdom : MonoBehaviour
                 MyDomain[i] = WorldRegions[i];
             }
         }
-    }
-
-    public GameObject[] GetDomain()
-    {
-        return MyDomain;
     }
 
 

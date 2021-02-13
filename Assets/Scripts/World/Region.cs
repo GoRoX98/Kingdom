@@ -14,6 +14,8 @@ public class Region : MonoBehaviour
     [SerializeField]
     /// <param name="TestId"> Id of Regions. Costil for using in others scripts</param>
     private int TestId;
+    [SerializeField]
+    public List<GameObject> Buildings = new List<GameObject>();
 
     void Start()
     {

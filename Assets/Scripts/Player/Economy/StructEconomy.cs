@@ -54,4 +54,21 @@ public struct StructEconomy
     {
         people += PeopleIncome;
     }
+
+    /// <summary>
+    /// Get info about player res
+    /// </summary>
+    /// <returns>info of player res</returns>
+    public int[] GetResources()
+    {
+        int[] Resources = new int[3] {food, gold, people};
+        return Resources;
+    }
+
+    public void Spend(int[] Res)
+    {
+        food -= Res[0];
+        gold -= Res[1];
+        people -= Res[2];
+    }
 }
