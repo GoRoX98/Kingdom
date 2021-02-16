@@ -9,13 +9,13 @@ using UnityEngine;
 /// </summary>
 public class Region : MonoBehaviour
 {
-    /// <param name = "Regions" > List of Regions on the map with self type (structure).</param>
+    //List of Regions on the map with self type (structure).
     public StructRegion[] Regions;
     [SerializeField]
-    /// <param name="TestId"> Id of Regions. Costil for using in others scripts</param>
+    //Id of Regions. Costil for using in others scripts
     private int TestId;
-    [SerializeField]
-    public List<GameObject> Buildings = new List<GameObject>();
+    //List of buildings in this region
+    public List<StructBuild> Buildings = new List<StructBuild>();
 
     void Start()
     {
@@ -30,7 +30,11 @@ public class Region : MonoBehaviour
 
 
 
-
+    /// <summary>
+    /// Generate structure for this region
+    /// </summary>
+    /// <param name="ThisRegion">GameObject of region</param>
+    /// <param name="i">Id of region</param>
     private void GenerateRegion(GameObject ThisRegion, int i)
     {
         int Owner;
@@ -52,6 +56,11 @@ public class Region : MonoBehaviour
         return TestId;
     }
 
+    /// <summary>
+    /// Who owner
+    /// </summary>
+    /// <param name="id">Id of region</param>
+    /// <returns>Id of owner</returns>
     public int Owner(int id)
     {
         return Regions[id].InfoOwner();

@@ -11,9 +11,6 @@ public class Economy : MonoBehaviour
 
     private int[] CurrentTime;
     private int TempWeek = 0;
-    private int GoldIncome = 10;
-    private int FoodIncome = 10;
-    private int PeopleIncome = 10;
 
 
     //Create player economy, starter recources, starter income
@@ -24,7 +21,6 @@ public class Economy : MonoBehaviour
         PlayerEconomy.AddFood(100);
         PlayerEconomy.AddGold(100);
         PlayerEconomy.AddPeople(100);
-        PlayerEconomy.SetIncome(FoodIncome, GoldIncome, PeopleIncome);
         print("Hello World");
         print(PlayerEconomy.GetGold());
     }
@@ -37,7 +33,11 @@ public class Economy : MonoBehaviour
 
         if (TempWeek != CurrentTime[0])
         {
+            //Update player income
+            PlayerEconomy.SetIncome(GetComponent<MyKingdom>().DomainIncome());
+            //Call income function
             PlayerEconomy.Income();
+            print($"Food: {PlayerEconomy.TakeIncome()[0]} | Gold: {PlayerEconomy.TakeIncome()[1]} | People: {PlayerEconomy.TakeIncome()[2]}");
             TempWeek = CurrentTime[0];
         }
     }

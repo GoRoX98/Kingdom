@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Structure of Player economy
+/// </summary>
 public struct StructEconomy
 {
 
@@ -13,7 +16,9 @@ public struct StructEconomy
     private int goldIncome;
     private int peopleIncome;
 
-
+    /// <summary>
+    /// Function for update amount of player
+    /// </summary>
     public void Income()
     {
         gold += goldIncome;
@@ -21,11 +26,25 @@ public struct StructEconomy
         people += peopleIncome;
     }
 
-    public void SetIncome(int Food, int Gold, int People)
+    /// <summary>
+    /// Set weekly income
+    /// </summary>
+    /// <param name="Income">Food, Gold, People</param>
+    public void SetIncome(int[] Income)
     {
-        foodIncome = Food;
-        goldIncome = Gold;
-        peopleIncome = People;
+        foodIncome = Income[0];
+        goldIncome = Income[1];
+        peopleIncome = Income[2];
+    }
+
+    /// <summary>
+    /// Take info about player income
+    /// </summary>
+    /// <returns>Food, Gold, People</returns>
+    public int[] TakeIncome()
+    {
+        int[] Income = new int[3] { foodIncome, goldIncome, peopleIncome };
+        return Income;
     }
 
     public int GetGold()
@@ -65,6 +84,10 @@ public struct StructEconomy
         return Resources;
     }
 
+    /// <summary>
+    /// Spend player's res for something 
+    /// </summary>
+    /// <param name="Res">Food, Gold, People</param>
     public void Spend(int[] Res)
     {
         food -= Res[0];

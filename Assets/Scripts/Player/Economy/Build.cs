@@ -7,7 +7,7 @@ public class Build : MonoBehaviour
     public GameObject World;
 
     /// <summary>
-    /// 
+    /// This function create a new building
     /// </summary>
     /// <param name="id">Id of selected region</param>
     /// <param name="BuildingId">Id of future building</param>
@@ -22,7 +22,7 @@ public class Build : MonoBehaviour
                 GameObject NewBuilding = World.GetComponent<WorldList>().BuildingsGO[BuildingId];
                 Vector2 Pos = new Vector2(ObjRegion.transform.position.x, ObjRegion.transform.position.y + 1.5f);
                 Instantiate(NewBuilding, Pos, Quaternion.identity, World.transform);
-                ObjRegion.GetComponent<Region>().Buildings.Add(NewBuilding);
+                ObjRegion.GetComponent<Region>().Buildings.Add(World.GetComponent<WorldList>().BuildingsList[BuildingId]);
             }
             //WIP - make UI
             else print("Not your region");
@@ -30,6 +30,11 @@ public class Build : MonoBehaviour
         else print("Not enough res");
     }
 
+    /// <summary>
+    /// This function verify cost of bulding and amount of player for try do it. 
+    /// </summary>
+    /// <param name="BuildingId">Id of building</param>
+    /// <returns></returns>
     private bool verifyCost(int BuildingId)
     {
         int step = 0;
