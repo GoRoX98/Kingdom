@@ -136,11 +136,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3217314986919646936, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.44
+      value: 11.39
       objectReference: {fileID: 0}
     - target: {fileID: 3217314986919646936, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.888493
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 3217314986919646936, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -277,6 +277,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -314,7 +315,7 @@ Camera:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -375,6 +376,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c9669ece485104fa07966336aa118c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!45 &519420034
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 20c074fb40f06214fa635d0213272ba6, type: 2}
 --- !u!1 &545068941
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8266866244409142949, guid: 606520a50fd5f6f42bf61e8e6946915b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.45
+      value: -1.57
       objectReference: {fileID: 0}
     - target: {fileID: 8266866244409142949, guid: 606520a50fd5f6f42bf61e8e6946915b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -770,6 +780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: {fileID: 1586643031}
+  MyDomain: []
 --- !u!114 &1073478115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -851,11 +862,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3217314986919646936, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.9484549
+      value: 5.408455
       objectReference: {fileID: 0}
     - target: {fileID: 3217314986919646936, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.888493
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 3217314986919646936, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1341,11 +1352,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3217314986919646936, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.92
+      value: 17.37
       objectReference: {fileID: 0}
     - target: {fileID: 3217314986919646936, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.888493
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 3217314986919646936, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1606,7 +1617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3217314986919646936, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.89
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 3217314986919646936, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
       propertyPath: m_LocalPosition.z
