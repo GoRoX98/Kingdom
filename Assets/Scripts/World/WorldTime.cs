@@ -28,8 +28,14 @@ public class WorldTime : MonoBehaviour
 
         if (week == 4)
         {
-            if (month < 13) month += 1;
+            if (month < 11) month += 1;
             else month = 1;
+
+            if (month >= 0 && month < 3) season = 0;
+            if (month >= 3 && month < 6) season = 1;            
+            if (month >= 6 && month < 9) season = 2;
+            if (month >= 9 && month < 12) season = 3;
+
             week = 0;
             print($"Current month: {month} | Week: {week}");
         }

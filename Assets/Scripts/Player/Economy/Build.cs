@@ -20,7 +20,7 @@ public class Build : MonoBehaviour
             if (ObjRegion.GetComponent<Region>().Owner(id) == 1)
             {
                 GameObject NewBuilding = World.GetComponent<WorldList>().BuildingsGO[BuildingId];
-                Vector2 Pos = new Vector2(ObjRegion.transform.position.x, ObjRegion.transform.position.y + 1.5f);
+                Vector3 Pos = new Vector3(ObjRegion.transform.position.x, ObjRegion.transform.position.y + 1.3f, 1.0f);
                 Instantiate(NewBuilding, Pos, Quaternion.identity, World.transform);
                 ObjRegion.GetComponent<Region>().Buildings.Add(World.GetComponent<WorldList>().BuildingsList[BuildingId]);
             }

@@ -12,9 +12,7 @@ public class PlayerUI : MonoBehaviour
     public GameObject World;
     public GameObject Player;
 
-    public Text GoldUI;
-    public Text FoodUI;
-    public Text PeopleUI;
+    public List<Text> ResourcesUI;
 
 
 
@@ -33,12 +31,25 @@ public class PlayerUI : MonoBehaviour
 
     public void resText()
     {
-        int gold = Player.GetComponent<Economy>().PlayerEconomy.GetGold();
-        int food = Player.GetComponent<Economy>().PlayerEconomy.GetFood();
-        int people = Player.GetComponent<Economy>().PlayerEconomy.GetPeople();
-        GoldUI.text = $"Gold: {gold}";
-        FoodUI.text = $"Food: {food}";
-        PeopleUI.text = $"People: {people}";
+        int[] res = Player.GetComponent<Economy>().PlayerEconomy.GetResources();
+        int[] income = Player.GetComponent<Economy>().PlayerEconomy.GetIncome();
+        ResourcesUI[0].text = $"Gold: {res[0]}";
+        ResourcesUI[1].text = $"Food: {res[1]}";
+        ResourcesUI[2].text = $"People: {res[2]}";
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (income[i] >= 0)
+            {
+                ResourcesUI[i + 3].text = $"+ {income[i]}";
+                ResourcesUI[i+3].color = new Color32(14, 185, 0, 255);
+            }
+            else
+            {
+                ResourcesUI[i + 3].text = $"- {income[i]}";
+                ResourcesUI[i + 3].color = new Color32(185, 0, 9, 255);
+            }
+        }
     }
 
     public void Clock()

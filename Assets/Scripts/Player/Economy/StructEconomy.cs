@@ -41,7 +41,7 @@ public struct StructEconomy
     /// Take info about player income
     /// </summary>
     /// <returns>Food, Gold, People</returns>
-    public int[] TakeIncome()
+    public int[] GetIncome()
     {
         int[] Income = new int[3] { foodIncome, goldIncome, peopleIncome };
         return Income;

@@ -37,7 +37,7 @@ public class Economy : MonoBehaviour
             PlayerEconomy.SetIncome(GetComponent<MyKingdom>().DomainIncome());
             //Call income function
             PlayerEconomy.Income();
-            print($"Food: {PlayerEconomy.TakeIncome()[0]} | Gold: {PlayerEconomy.TakeIncome()[1]} | People: {PlayerEconomy.TakeIncome()[2]}");
+            print($"Food: {PlayerEconomy.GetIncome()[0]} | Gold: {PlayerEconomy.GetIncome()[1]} | People: {PlayerEconomy.GetIncome()[2]}");
             TempWeek = CurrentTime[0];
         }
     }
