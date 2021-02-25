@@ -555,6 +555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   World: {fileID: 1586643031}
+  PlayerUI: {fileID: 1943521968}
 --- !u!1 &1199481988 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4712475678514226619, guid: 4d146b5527f033d469e1ec84e3ba6333, type: 3}
@@ -1027,6 +1028,8 @@ MonoBehaviour:
   - {fileID: 834545294414095888}
   - {fileID: 834545294414095887}
   - {fileID: 834545294414095886}
+  PrefsUI:
+  - {fileID: 2289985520251874447, guid: df8c13e7e21f4974296929dd015df3ac, type: 3}
 --- !u!1001 &834545294414095885
 PrefabInstance:
   m_ObjectHideFlags: 0

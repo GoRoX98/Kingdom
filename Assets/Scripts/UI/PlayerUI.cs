@@ -13,6 +13,7 @@ public class PlayerUI : MonoBehaviour
     public GameObject Player;
 
     public List<Text> ResourcesUI;
+    public List<GameObject> PrefsUI;
 
 
 

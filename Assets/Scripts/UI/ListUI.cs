@@ -14,4 +14,7 @@ public class ListUI : MonoBehaviour
     //UI list for clock UI
     public List<Text> Clock = new List<Text>();
 
+    //UI for info window
+    public List<Text> WindowInfo = new List<Text>();
+
 }

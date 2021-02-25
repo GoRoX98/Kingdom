@@ -18,9 +18,9 @@ public class Economy : MonoBehaviour
     {
         World = GameObject.Find("World");
         PlayerEconomy = new StructEconomy();
-        PlayerEconomy.AddFood(100);
-        PlayerEconomy.AddGold(100);
-        PlayerEconomy.AddPeople(100);
+        PlayerEconomy.AddFood(1000);
+        PlayerEconomy.AddGold(1000);
+        PlayerEconomy.AddPeople(1000);
         print("Hello World");
         print(PlayerEconomy.GetGold());
     }
