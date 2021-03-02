@@ -15,11 +15,11 @@ E:/Kingdom
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-56264
+59860
 Successfully changed project path to: E:/Kingdom
 E:/Kingdom
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 34.49 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 35.64 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.1f1 (270dd8c3da1c)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Resources/UnitySubsystems
@@ -35,92 +35,410 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56856
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56832
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0.001537 seconds.
+Registered in 0.001563 seconds.
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 34.89 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 34.42 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.980 seconds
+- Completed reload, in  0.904 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000441 seconds.
+Registered in 0.000438 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 35.51 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 35.52 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.758 seconds
+- Completed reload, in  0.754 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.53 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.38 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1803 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 84.9 MB.
 System memory in use after: 85.0 MB.
 
 Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 2253.
-Total: 1.882000 ms (FindLiveObjects: 0.218700 ms CreateObjectMapping: 0.043200 ms MarkObjects: 1.584700 ms  DeleteObjects: 0.034200 ms)
+Total: 2.067500 ms (FindLiveObjects: 0.186300 ms CreateObjectMapping: 0.042400 ms MarkObjects: 1.814800 ms  DeleteObjects: 0.023000 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Scripts/World/Region.cs
-  artifactKey: Guid(e8fd9fb635036f44093af2d41116a19e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/World/Region.cs using Guid(e8fd9fb635036f44093af2d41116a19e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af76f738e54dc324723374bcbb50f645') in 0.016870 seconds
-  Import took 0.032924 seconds .
+  path: Assets/Objects/World/Army.prefab
+  artifactKey: Guid(b7ebde063c5c61b4f8418861d0a93418) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/World/Army.prefab using Guid(b7ebde063c5c61b4f8418861d0a93418) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '006f789a03b8deee54e185419fd9470a') in 0.033816 seconds
+  Import took 0.058761 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.685947 seconds.
+  path: Assets/Graphics/World/Textures
+  artifactKey: Guid(9691e964c0662fa47bcf5695c716d19f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/World/Textures using Guid(9691e964c0662fa47bcf5695c716d19f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1944ece4e8d297e7f8d7b8c2a3b65de') in 0.001107 seconds
+  Import took 0.022420 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.434955 seconds.
+  path: Assets/Graphics/World/PNG
+  artifactKey: Guid(3dfab363e2c48844bba329adcb84796d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/World/PNG using Guid(3dfab363e2c48844bba329adcb84796d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d26ac8f97cdb83e4ef3229724454dfe') in 0.000996 seconds
+  Import took 0.028139 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4935.398694 seconds.
+  path: Assets/Graphics
+  artifactKey: Guid(cc1cf6c478d0e3243b73c4fc0fa24fda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics using Guid(cc1cf6c478d0e3243b73c4fc0fa24fda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4672f14d7e9b21bfea2f212e7ca9bfec') in 0.003217 seconds
+  Import took 0.088406 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.786089 seconds.
+  path: Assets/Graphics/Army
+  artifactKey: Guid(0e4ed2e1eaac79f428d8c3a7bf0f7bb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Army using Guid(0e4ed2e1eaac79f428d8c3a7bf0f7bb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3733f3f6735a2bb8401789d502f625a8') in 0.001290 seconds
+  Import took 0.012724 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.869499 seconds.
+  path: Assets/Graphics/Army/New Folder
+  artifactKey: Guid(57659e92ad65bb2478957a3026c18087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Army/New Folder using Guid(57659e92ad65bb2478957a3026c18087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '414d7ac269d8de5b2b81c3fbbc165132') in 0.001497 seconds
+  Import took 0.013405 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.905021 seconds.
+  path: Assets/Graphics/Army/knight walk 1.png
+  artifactKey: Guid(4d83d0d535dd27649a34d988520e4471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Army/knight walk 1.png using Guid(4d83d0d535dd27649a34d988520e4471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f9a803b1978658ff82ad1d62c8a70c8') in 0.141455 seconds
+  Import took 0.144814 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000159 seconds.
+  path: Assets/Graphics/Army/knight walk 2.png
+  artifactKey: Guid(b96005d8d1a615241a9924c4e30a3702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Army/knight walk 2.png using Guid(b96005d8d1a615241a9924c4e30a3702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5825ba530a86ef4ace666a1e2d0288ec') in 0.006986 seconds
+  Import took 0.009806 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Graphics/Army/knight walk 4.png
+  artifactKey: Guid(bf64fc4d961549a4ebfda749e8f5c26f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Army/knight walk 4.png using Guid(bf64fc4d961549a4ebfda749e8f5c26f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd4417aa27c65951452f905f3c172f21') in 0.006905 seconds
+  Import took 0.010366 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000161 seconds.
+  path: Assets/Graphics/Army/knight walk 3.png
+  artifactKey: Guid(437811b8b8851884f9e952dc49d03073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Army/knight walk 3.png using Guid(437811b8b8851884f9e952dc49d03073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24bb782490029905730f354154ef2abf') in 0.007287 seconds
+  Import took 0.025433 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 95.274021 seconds.
+  path: Assets/Graphics/Army/Movement.anim
+  artifactKey: Guid(e87952d889928a54694b487f39d53f91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Army/Movement.anim using Guid(e87952d889928a54694b487f39d53f91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d5ea30ea4d4d325cb415483c569d94d') in 0.004134 seconds
+  Import took 0.015487 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 153.575202 seconds.
+  path: Assets/Graphics/Army/knight walk 1.controller
+  artifactKey: Guid(f85e2253acaba1943ab6771dd0d451fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Army/knight walk 1.controller using Guid(f85e2253acaba1943ab6771dd0d451fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cd6ce311357ada354f14a2c7973dd88') in 0.006154 seconds
+  Import took 0.015347 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.836019 seconds.
+  path: Assets/Graphics/Army/New Animation.anim
+  artifactKey: Guid(9673a95645d668f439ae24f452868458) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Army/New Animation.anim using Guid(9673a95645d668f439ae24f452868458) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6b7ee12dc70d56dedbaf5db86b27f1e') in 0.001358 seconds
+  Import took 0.022189 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 593.631959 seconds.
+  path: Assets/Graphics/Army/Stay.anim
+  artifactKey: Guid(9673a95645d668f439ae24f452868458) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Army/Stay.anim using Guid(9673a95645d668f439ae24f452868458) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbf244e73fa57302d22a0b6b2bd8b4b2') in 0.001352 seconds
+  Import took 0.039870 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 38.971929 seconds.
+  path: Assets/Objects/World/Army.prefab
+  artifactKey: Guid(b7ebde063c5c61b4f8418861d0a93418) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/World/Army.prefab using Guid(b7ebde063c5c61b4f8418861d0a93418) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70ceed4a9dcc85b29ad7cc6c5b692a91') in 0.052439 seconds
+  Import took 0.096784 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1597.952493 seconds.
+  path: Assets/Objects/World/Army.prefab
+  artifactKey: Guid(b7ebde063c5c61b4f8418861d0a93418) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/World/Army.prefab using Guid(b7ebde063c5c61b4f8418861d0a93418) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (knight walk 1) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules/Animation/Director/AnimatorControllerPlayable.cpp line 332]
+
+The Animator Controller (knight walk 1) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules/Animation/Director/AnimatorControllerPlayable.cpp line 332]
+
+ -> (artifact id: '04affb42f4b8eb183553ffff86e760a3') in 0.106847 seconds
+  Import took 0.129281 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002428 seconds.
+  path: Assets/Objects/World/Army.prefab
+  artifactKey: Guid(b7ebde063c5c61b4f8418861d0a93418) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Objects/World/Army.prefab using Guid(b7ebde063c5c61b4f8418861d0a93418) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (knight walk 1) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules/Animation/Director/AnimatorControllerPlayable.cpp line 332]
+
+The Animator Controller (knight walk 1) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules/Animation/Director/AnimatorControllerPlayable.cpp line 332]
+
+ -> (artifact id: '04affb42f4b8eb183553ffff86e760a3') in 0.006249 seconds
+  Import took 0.017182 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 391.615686 seconds.
+  path: Assets/Graphics/Animation
+  artifactKey: Guid(b87e195f7fa969944a58bf08bcaa3334) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Animation using Guid(b87e195f7fa969944a58bf08bcaa3334) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30e733af2fbac988c2a36914655b8233') in 0.000952 seconds
+  Import took 0.023220 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.513033 seconds.
+  path: Assets/Graphics/Animation/Army
+  artifactKey: Guid(47dca699826c4754b971d777e60eebcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Animation/Army using Guid(47dca699826c4754b971d777e60eebcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c3958d5ccf28a9b17b22ca7c187d9c2') in 0.001051 seconds
+  Import took 0.020851 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.751751 seconds.
+  path: Assets/Graphics/Animation/Walk.anim
+  artifactKey: Guid(c3f951a194988df4497145486c056dd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Animation/Walk.anim using Guid(c3f951a194988df4497145486c056dd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49a4cf7ff176b667a234d6af458bf089') in 0.001400 seconds
+  Import took 0.013288 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 74.972070 seconds.
+  path: Assets/Graphics/Animation/Army.controller
+  artifactKey: Guid(f85e2253acaba1943ab6771dd0d451fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Animation/Army.controller using Guid(f85e2253acaba1943ab6771dd0d451fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c2033ba342f5a95fa942d1a325f6f8d') in 0.001280 seconds
+  Import took 0.021439 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.000521 seconds.
+Registered in 0.000668 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.38 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.40 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.671 seconds
+- Completed reload, in  0.746 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.37 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1793 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 84.7 MB.
-System memory in use after: 84.8 MB.
+System memory in use before: 87.9 MB.
+System memory in use after: 88.1 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2256.
-Total: 2.031600 ms (FindLiveObjects: 0.192900 ms CreateObjectMapping: 0.054500 ms MarkObjects: 1.765300 ms  DeleteObjects: 0.017500 ms)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2266.
+Total: 1.653200 ms (FindLiveObjects: 0.153100 ms CreateObjectMapping: 0.038400 ms MarkObjects: 1.446000 ms  DeleteObjects: 0.014900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000529 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.660 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.37 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1793 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.1 MB.
+System memory in use after: 88.2 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2269.
+Total: 1.798800 ms (FindLiveObjects: 0.176800 ms CreateObjectMapping: 0.038500 ms MarkObjects: 1.562800 ms  DeleteObjects: 0.019400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000501 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.664 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.35 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1793 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.3 MB.
+System memory in use after: 88.4 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2272.
+Total: 1.733000 ms (FindLiveObjects: 0.170100 ms CreateObjectMapping: 0.037100 ms MarkObjects: 1.509200 ms  DeleteObjects: 0.015600 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.543386 seconds.
-  path: Assets/Objects/World/Plain.prefab
-  artifactKey: Guid(89c0ac5ff00ed154984f3227f7a370a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/World/Plain.prefab using Guid(89c0ac5ff00ed154984f3227f7a370a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9da8408f2867974251d52e4867fdb00') in 0.085723 seconds
-  Import took 0.088953 seconds .
+  Time since last request: 1585.310148 seconds.
+  path: Assets/UI/Castle.prefab
+  artifactKey: Guid(2dd512926d237a441963aa5ef6b863f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Castle.prefab using Guid(2dd512926d237a441963aa5ef6b863f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'caff024058f10d4b1b4c5b0470ecbf44') in 0.019708 seconds
+  Import took 0.037986 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 133.019092 seconds.
+  path: Assets/UI/Castle.prefab
+  artifactKey: Guid(2dd512926d237a441963aa5ef6b863f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Castle.prefab using Guid(2dd512926d237a441963aa5ef6b863f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13b01ef141226ce5d2eac3392242beb5') in 0.008734 seconds
+  Import took 0.021630 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 160.775362 seconds.
+  path: Assets/UI/Castle.prefab
+  artifactKey: Guid(2dd512926d237a441963aa5ef6b863f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Castle.prefab using Guid(2dd512926d237a441963aa5ef6b863f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4617903aad1e4416c4de7c16a0e8af2') in 0.002189 seconds
+  Import took 0.023935 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1020.333936 seconds.
+  path: Assets/UI/Castle.prefab
+  artifactKey: Guid(2dd512926d237a441963aa5ef6b863f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Castle.prefab using Guid(2dd512926d237a441963aa5ef6b863f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '773f9648229127c961a1389c78833ec9') in 0.016002 seconds
+  Import took 0.036615 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.474844 seconds.
+  path: Assets/UI/Castle UI.prefab
+  artifactKey: Guid(2dd512926d237a441963aa5ef6b863f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Castle UI.prefab using Guid(2dd512926d237a441963aa5ef6b863f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4257f000808422351e91dae5e13cac84') in 0.002983 seconds
+  Import took 0.014972 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 142.923728 seconds.
+  path: Assets/UI/Region Info
+  artifactKey: Guid(84cff7a38967b6546a5b04e02f7dcb1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Region Info using Guid(84cff7a38967b6546a5b04e02f7dcb1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f9da3d9680d5520731e0f01cb4d75a7') in 0.000988 seconds
+  Import took 0.008277 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.204544 seconds.
+  path: Assets/UI/Castle UI.prefab
+  artifactKey: Guid(2dd512926d237a441963aa5ef6b863f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Castle UI.prefab using Guid(2dd512926d237a441963aa5ef6b863f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae57e565b1da9c0f50bcfdf75bb1df63') in 0.002882 seconds
+  Import took 0.005641 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/UI/Castle UI.prefab
+  artifactKey: Guid(2dd512926d237a441963aa5ef6b863f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Castle UI.prefab using Guid(2dd512926d237a441963aa5ef6b863f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae57e565b1da9c0f50bcfdf75bb1df63') in 0.002427 seconds
+  Import took 0.004829 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
