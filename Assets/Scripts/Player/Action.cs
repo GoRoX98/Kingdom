@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Action : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public void Select()
     {
-        
+/*        if (Input.GetMouseButtonDown(0)) parametr = true;
+        else parametr = false;*/
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

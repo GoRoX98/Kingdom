@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\UI\objInfo.cs" />
     <Compile Include="Assets\Scripts\Player\Economy\Build.cs" />
     <Compile Include="Assets\Scripts\World\Region.cs" />
+    <Compile Include="Assets\Scripts\Army\Army.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
