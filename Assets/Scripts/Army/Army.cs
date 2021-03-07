@@ -10,7 +10,8 @@ public class Army : MonoBehaviour
     private Transform Position;
     private Animator Animator;
 
-    void Start()
+
+    void Awake()
     {
         Animator = GetComponent<Animator>();
         Position = GetComponent<Transform>();

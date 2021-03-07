@@ -12,12 +12,18 @@ public class WorldList : MonoBehaviour
     public List<string> Season = new List<string> { "Spring", "Summer", "Autumn", "Winter" };
     //List of Month
     public List<string> Month = new List<string> { "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "Junuary", "February" };
+    //Type of Soldires
+    public List<StructSoldire> SoldiresType = new List<StructSoldire>();
 
     void Awake()
     {
         BuildingsList.Add(new StructBuild ("Village", 0, 10, 20, 100, 50, 20, 50, 0));
         BuildingsList.Add(new StructBuild("Farm", 25, 10, 0, 100, 50, 20, 50, 1));
         BuildingsList.Add(new StructBuild("Mine", -10, 30, -5, 100, 50, 20, 50, 2));
+
+        SoldiresType.Add(new StructSoldire("Recruit", 5, 2, 1, 0.1f, 0.1f, 0.05f));
+        SoldiresType.Add(new StructSoldire("Archer", 4, 3, 1, 0.15f, 0.1f, 0.1f));
+        SoldiresType.Add(new StructSoldire("Cavalary", 10, 5, 2, 0.3f, 0.2f, 0.15f));
     }
 
 }

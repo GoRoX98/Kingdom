@@ -8,13 +8,13 @@ using UnityEngine;
 public struct StructEconomy
 {
 
-    private int food;
-    private int gold;
-    private int people;
+    private float food;
+    private float gold;
+    private float people;
 
-    private int foodIncome;
-    private int goldIncome;
-    private int peopleIncome;
+    private float foodIncome;
+    private float goldIncome;
+    private float peopleIncome;
 
     /// <summary>
     /// Function for update amount of player
@@ -30,7 +30,7 @@ public struct StructEconomy
     /// Set weekly income
     /// </summary>
     /// <param name="Income">Food, Gold, People</param>
-    public void SetIncome(int[] Income)
+    public void SetIncome(float[] Income)
     {
         foodIncome = Income[0];
         goldIncome = Income[1];
@@ -41,13 +41,13 @@ public struct StructEconomy
     /// Take info about player income
     /// </summary>
     /// <returns>Food, Gold, People</returns>
-    public int[] GetIncome()
+    public float[] GetIncome()
     {
-        int[] Income = new int[3] { foodIncome, goldIncome, peopleIncome };
+        float[] Income = new float[3] { foodIncome, goldIncome, peopleIncome };
         return Income;
     }
 
-    public int GetGold()
+    public float GetGold()
     {
         return gold;
     }
@@ -56,7 +56,7 @@ public struct StructEconomy
         gold += GoldIncome;
     }
 
-    public int GetFood()
+    public float GetFood()
     {
         return food;
     }
@@ -65,7 +65,7 @@ public struct StructEconomy
         food += FoodIncome;
     }
 
-    public int GetPeople()
+    public float GetPeople()
     {
         return people;
     }
@@ -78,9 +78,9 @@ public struct StructEconomy
     /// Get info about player res
     /// </summary>
     /// <returns>info of player res</returns>
-    public int[] GetResources()
+    public float[] GetResources()
     {
-        int[] Resources = new int[3] {food, gold, people};
+        float[] Resources = new float[3] {food, gold, people};
         return Resources;
     }
 
@@ -88,7 +88,7 @@ public struct StructEconomy
     /// Spend player's res for something 
     /// </summary>
     /// <param name="Res">Food, Gold, People</param>
-    public void Spend(int[] Res)
+    public void Spend(float[] Res)
     {
         food -= Res[0];
         gold -= Res[1];

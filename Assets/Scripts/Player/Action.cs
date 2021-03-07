@@ -6,10 +6,5 @@ using UnityEngine.EventSystems;
 public class Action : MonoBehaviour
 {
 
-    public void Select()
-    {
-/*        if (Input.GetMouseButtonDown(0)) parametr = true;
-        else parametr = false;*/
-    }
 
 }

@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Army\Army.cs" />
     <Compile Include="Assets\Scripts\UI\PlayerUI.cs" />
     <Compile Include="Assets\Scripts\World\WorldList.cs" />
     <Compile Include="Assets\Scripts\World\StructRegion.cs" />
@@ -72,7 +73,8 @@
     <Compile Include="Assets\Scripts\UI\objInfo.cs" />
     <Compile Include="Assets\Scripts\Player\Economy\Build.cs" />
     <Compile Include="Assets\Scripts\World\Region.cs" />
-    <Compile Include="Assets\Scripts\Army\Army.cs" />
+    <Compile Include="Assets\Scripts\Army\StructArmy.cs" />
+    <Compile Include="Assets\Scripts\Army\StructSoldire.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -14,16 +14,16 @@ public struct StructBuild
     /// 8 - id of building
     /// </summary>
     private string name;
-    private int foodIncome;
-    private int goldIncome;
-    private int peopleIncome;
+    private float foodIncome;
+    private float goldIncome;
+    private float peopleIncome;
     private float life;
-    private int PriceF;
-    private int PriceG;
-    private int PriceP;
+    private float PriceF;
+    private float PriceG;
+    private float PriceP;
     private int id;
 
-    public StructBuild (string name, int food, int gold, int people, float life, int PriceF, int PriceG, int PriceP, int id)
+    public StructBuild (string name, float food, float gold, float people, float life, float PriceF, float PriceG, float PriceP, int id)
     {
         this.name = name;
         this.foodIncome = food;
@@ -41,15 +41,15 @@ public struct StructBuild
         return id;
     }
 
-    public int[] GetIncome()
+    public float[] GetIncome()
     {
-        int[] Income = new int[3] {foodIncome, goldIncome, peopleIncome};
+        float[] Income = new float[3] {foodIncome, goldIncome, peopleIncome};
         return Income;
     }
 
-    public int[] GetCost()
+    public float[] GetCost()
     {
-        int[] cost = new int[3] { PriceF, PriceG, PriceP };
+        float[] cost = new float[3] { PriceF, PriceG, PriceP };
         return cost;
     }
 }

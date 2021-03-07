@@ -32,8 +32,8 @@ public class PlayerUI : MonoBehaviour
 
     public void resText()
     {
-        int[] res = Player.GetComponent<Economy>().PlayerEconomy.GetResources();
-        int[] income = Player.GetComponent<Economy>().PlayerEconomy.GetIncome();
+        float[] res = Player.GetComponent<Economy>().PlayerEconomy.GetResources();
+        float[] income = Player.GetComponent<Economy>().PlayerEconomy.GetIncome();
         ResourcesUI[0].text = $"Gold: {res[0]}";
         ResourcesUI[1].text = $"Food: {res[1]}";
         ResourcesUI[2].text = $"People: {res[2]}";

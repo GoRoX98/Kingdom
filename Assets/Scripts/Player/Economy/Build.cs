@@ -49,8 +49,8 @@ public class Build : MonoBehaviour
     private bool verifyCost(int BuildingId)
     {
         int step = 0;
-        int[] playerRes = GetComponent<Economy>().PlayerEconomy.GetResources();
-        int[] cost = World.GetComponent<WorldList>().BuildingsList[BuildingId].GetCost();
+        float[] playerRes = GetComponent<Economy>().PlayerEconomy.GetResources();
+        float[] cost = World.GetComponent<WorldList>().BuildingsList[BuildingId].GetCost();
 
         for (int i = 0; i < 3; i++)
         {

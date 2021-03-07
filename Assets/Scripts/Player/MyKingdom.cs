@@ -57,10 +57,10 @@ public class MyKingdom : MonoBehaviour
     /// Income from player's kingdome
     /// </summary>
     /// <returns>Food, Gold, People</returns>
-    public int[] DomainIncome()
+    public float[] DomainIncome()
     {
         //food, gold, people
-        int[] Income = new int[3] {10, 10, 10};
+        float[] Income = new float[3] {10, 10, 10};
 
         for (int i = 0; i < MyDomain.Count; i++)
         {
