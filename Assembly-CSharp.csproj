@@ -65,16 +65,17 @@
     <Compile Include="Assets\Scripts\Player\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\World\World.cs" />
     <Compile Include="Assets\Scripts\World\WorldTime.cs" />
+    <Compile Include="Assets\Scripts\Army\StructSoldire.cs" />
     <Compile Include="Assets\Scripts\Player\Action.cs" />
     <Compile Include="Assets\Scripts\Player\MyKingdom.cs" />
     <Compile Include="Assets\Scripts\Player\Economy\StructEconomy.cs" />
     <Compile Include="Assets\Scripts\UI\ListUI.cs" />
     <Compile Include="Assets\Scripts\UI\InteractionUI.cs" />
+    <Compile Include="Assets\Scripts\Army\StructArmy.cs" />
     <Compile Include="Assets\Scripts\UI\objInfo.cs" />
     <Compile Include="Assets\Scripts\Player\Economy\Build.cs" />
     <Compile Include="Assets\Scripts\World\Region.cs" />
-    <Compile Include="Assets\Scripts\Army\StructArmy.cs" />
-    <Compile Include="Assets\Scripts\Army\StructSoldire.cs" />
+    <Compile Include="Assets\Scripts\Army\Hire.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

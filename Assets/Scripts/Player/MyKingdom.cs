@@ -16,12 +16,23 @@ public class MyKingdom : MonoBehaviour
     private int TempMyAmount = 0;
     private GameObject[] Regions;
     private int TempMonth;
+    //Army
+    private List<StructSoldire> SoldiresTypes;
+    private int[] AmountOfSoldires;
 
     void Start()
     {
         Amount = GameObject.Find("World").GetComponent<World>().AmountOfRegions;
         Regions = GameObject.Find("World").GetComponent<World>().Regions;
         TempMonth = World.GetComponent<WorldTime>().GetTime()[1];
+
+        SoldiresTypes = World.GetComponent<WorldList>().SoldiresType;
+        AmountOfSoldires = new int[SoldiresTypes.Count + 1];
+        for (int i = 0; SoldiresTypes.Count > i; i++)
+        {
+            AmountOfSoldires[i] = 0;
+        }
+
         MyTerritory();
     }
 
@@ -48,6 +59,11 @@ public class MyKingdom : MonoBehaviour
                 MyAmount++;
                 if (MyDomain.Count < MyAmount) MyDomain.Add(Regions[i]);
             }
+        }
+        if (TempMyAmount > MyAmount)
+        {
+            MyDomain.RemoveAt(TempMyAmount);
+            TempMyAmount--;
         }
         TempMyAmount = MyAmount;
         
@@ -76,5 +92,56 @@ public class MyKingdom : MonoBehaviour
         return Income;
     }
 
+    public void AddSoldires(int[] add)
+    {
+        for (int i = 0; AmountOfSoldires.Length-1 > i; i++)
+        {
+            AmountOfSoldires[i] += add[i];
+        }
+    }
 
+    public bool GetSoldires(int[] get)
+    {
+        bool verify = false;
+        for (int i = 0; AmountOfSoldires.Length - 1 > i; i++)
+        {
+            if (AmountOfSoldires[i] > get[i])
+            {
+                verify = true;
+            }
+            else 
+            {
+                verify = false;
+                break;
+            }
+        }
+        if (verify == true)
+        {
+            for (int i = 0; AmountOfSoldires.Length - 1 > i; i++)
+            {
+                AmountOfSoldires[i] -= get[i];
+            }
+            return verify;
+        }
+        else
+        {
+            print("not enough soldires");
+            return verify;
+        }
+    }
+
+    public int[] AllSoldires()
+    {
+        return AmountOfSoldires;
+    }
+
+    public int SumSoldires()
+    {
+        int Sum = 0;
+        for (int i = 0; AmountOfSoldires.Length > i; i++)
+        {
+            Sum += AmountOfSoldires[i];
+        }
+        return Sum;
+    }
 }
