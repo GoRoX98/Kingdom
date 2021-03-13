@@ -14,6 +14,7 @@ public class WorldList : MonoBehaviour
     public List<string> Month = new List<string> { "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "Junuary", "February" };
     //Type of Soldires
     public List<StructSoldire> SoldiresType = new List<StructSoldire>();
+    public List<Soldiers> SoldiresDB = new List<Soldiers>();
 
     void Awake()
     {

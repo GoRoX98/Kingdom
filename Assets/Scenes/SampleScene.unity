@@ -961,6 +961,28 @@ MonoBehaviour:
   - December
   - Junuary
   - February
+  SoldiresDB:
+  - Name: Recruit
+    Life: 5
+    Damage: 2
+    Speed: 1
+    HireGold: 0.1
+    WeekFood: 0.1
+    WeekGold: 0.05
+  - Name: Archer
+    Life: 4
+    Damage: 3
+    Speed: 1
+    HireGold: 0.15
+    WeekFood: 0.1
+    WeekGold: 0.1
+  - Name: Cavalary
+    Life: 10
+    Damage: 5
+    Speed: 2
+    HireGold: 0.3
+    WeekFood: 0.2
+    WeekGold: 0.15
 --- !u!114 &1586643035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1351,6 +1373,7 @@ MonoBehaviour:
   Oclock: {fileID: 1199481988}
   World: {fileID: 1586643031}
   Player: {fileID: 1073478110}
+  MyArmy: []
   ResourcesUI:
   - {fileID: 311772821}
   - {fileID: 1593173517}
