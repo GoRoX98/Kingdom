@@ -29,14 +29,15 @@ public class PlayerUI : MonoBehaviour
     {
         resText();
         Clock();
+        MyArmy[0].text = Player.GetComponent<MyKingdom>().SumSoldires().ToString();
     }
 
     public void resText()
     {
         float[] res = Player.GetComponent<Economy>().PlayerEconomy.GetResources();
         float[] income = Player.GetComponent<Economy>().PlayerEconomy.GetIncome();
-        ResourcesUI[0].text = $"Gold: {res[0]}";
-        ResourcesUI[1].text = $"Food: {res[1]}";
+        ResourcesUI[0].text = $"Food: {res[0]}";
+        ResourcesUI[1].text = $"Gold: {res[1]}";
         ResourcesUI[2].text = $"People: {res[2]}";
 
         for (int i = 0; i < 3; i++)

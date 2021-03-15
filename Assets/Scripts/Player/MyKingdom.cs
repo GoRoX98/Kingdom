@@ -17,7 +17,7 @@ public class MyKingdom : MonoBehaviour
     private GameObject[] Regions;
     private int TempMonth;
     //Army
-    private List<StructSoldire> SoldiresTypes;
+    private List<Soldiers> SoldiresTypes;
     private int[] AmountOfSoldires;
 
     void Start()
@@ -26,8 +26,8 @@ public class MyKingdom : MonoBehaviour
         Regions = GameObject.Find("World").GetComponent<World>().Regions;
         TempMonth = World.GetComponent<WorldTime>().GetTime()[1];
 
-        SoldiresTypes = World.GetComponent<WorldList>().SoldiresType;
-        AmountOfSoldires = new int[SoldiresTypes.Count + 1];
+        SoldiresTypes = World.GetComponent<WorldList>().SoldiresDB;
+        AmountOfSoldires = new int[SoldiresTypes.Count];
         for (int i = 0; SoldiresTypes.Count > i; i++)
         {
             AmountOfSoldires[i] = 0;
@@ -94,7 +94,7 @@ public class MyKingdom : MonoBehaviour
 
     public void AddSoldires(int[] add)
     {
-        for (int i = 0; AmountOfSoldires.Length-1 > i; i++)
+        for (int i = 0; AmountOfSoldires.Length > i; i++)
         {
             AmountOfSoldires[i] += add[i];
         }
@@ -103,7 +103,7 @@ public class MyKingdom : MonoBehaviour
     public bool GetSoldires(int[] get)
     {
         bool verify = false;
-        for (int i = 0; AmountOfSoldires.Length - 1 > i; i++)
+        for (int i = 0; AmountOfSoldires.Length > i; i++)
         {
             if (AmountOfSoldires[i] > get[i])
             {
@@ -117,7 +117,7 @@ public class MyKingdom : MonoBehaviour
         }
         if (verify == true)
         {
-            for (int i = 0; AmountOfSoldires.Length - 1 > i; i++)
+            for (int i = 0; AmountOfSoldires.Length > i; i++)
             {
                 AmountOfSoldires[i] -= get[i];
             }

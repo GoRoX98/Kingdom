@@ -10,6 +10,12 @@ public class Hire : MonoBehaviour
     public Text Amount;
     public int Type;
 
+    void Start()
+    {
+        Player = GameObject.FindGameObjectWithTag("Player");
+        World = GameObject.Find("World");
+    }
+
     /// <summary>
     /// Hire function
     /// </summary>
@@ -17,12 +23,13 @@ public class Hire : MonoBehaviour
     /// <param name="Who">Type of soldire</param>
     public void HireSoldires()
     {
+        Type = gameObject.GetComponent<InteractionUI>().Parametrs.Integer[0];
         int amount = int.Parse(Amount.text);
         print(amount);
-        StructSoldire TypeSoldire = World.GetComponent<WorldList>().SoldiresType[Type];
+        Soldiers Soldire = World.GetComponent<WorldList>().SoldiresDB[Type];
         StructEconomy Economy = Player.GetComponent<Economy>().PlayerEconomy;
-        float SumGold = amount * TypeSoldire.GetCost();
-        int[] add = new int[3];
+        float SumGold = amount * Soldire.HireGold;
+        int[] add = new int[World.GetComponent<WorldList>().SoldiresDB.Count];
 
         if (Economy.GetResources()[1] >= SumGold)
         {
@@ -31,7 +38,10 @@ public class Hire : MonoBehaviour
                 if (i == Type) add[i] = amount;
                 else add[i] = 0;
             }
+            float[] spend = new float[] { 0, SumGold, 0 };
+            Player.GetComponent<Economy>().PlayerEconomy.Spend(spend);
             Player.GetComponent<MyKingdom>().AddSoldires(add);
+            print("Hire sucsess");
         }
         else print("Not enough gold");
     }

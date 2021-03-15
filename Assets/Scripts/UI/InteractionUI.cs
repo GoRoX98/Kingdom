@@ -9,6 +9,10 @@ public class InteractionUI : MonoBehaviour
 {
     private GameObject MyKingdom;
     public GameObject Child;
+    public GameObject Parent;
+
+    public Parametrs Parametrs = new Parametrs();
+    public bool UseParametrs = false;
 
 
     void Awake()
@@ -42,5 +46,16 @@ public class InteractionUI : MonoBehaviour
     {
         Debug.Log("Disactivate");
         Obj.SetActive(false);
+    }
+
+    public void OpenWindow()
+    {
+        if (UseParametrs == true)
+        {
+            Child.GetComponent<InteractionUI>().Parametrs = Parametrs;
+        }
+
+        if (Parent == null)     Instantiate(Child);
+        else    Instantiate(Child, Parent.transform);
     }
 }

@@ -7,17 +7,17 @@ public struct StructArmy
 
     private string ArmyName;
     private int People;
-    private StructSoldire[] TypeSoldires;
+    private Soldiers[] Soldires;
     private int[] ArmyStruct;
     private float SumLife;
     private float SumDmg;
     private float SumGold;
     private float SumFood;
 
-    public StructArmy(string name, StructSoldire[] TypeSoldires, int[] ArmyStructure, float SumLife, float SumDmg, float SumGold, float SumFood)
+    public StructArmy(string name, Soldiers[] Soldires, int[] ArmyStructure, float SumLife, float SumDmg, float SumGold, float SumFood)
     {
         ArmyName = name;
-        this.TypeSoldires = TypeSoldires;
+        this.Soldires = Soldires;
         ArmyStruct = ArmyStructure;
         int People = 0;
         for (int i = 0; ArmyStructure.Length < i; i++)

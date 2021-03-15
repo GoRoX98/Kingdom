@@ -12,4 +12,10 @@ public class Soldiers
     public float HireGold;
     public float WeekFood;
     public float WeekGold;
+
+    public float[] GetParam()
+    {
+        float[] parametrs = new float[] { Life, Damage, WeekFood, WeekGold };
+        return parametrs;
+    }
 }

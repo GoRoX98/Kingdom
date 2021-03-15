@@ -4,6 +4,7 @@ using System.Data;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
 public class ListUI : MonoBehaviour
 {
     public int Id;

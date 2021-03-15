@@ -1373,7 +1373,8 @@ MonoBehaviour:
   Oclock: {fileID: 1199481988}
   World: {fileID: 1586643031}
   Player: {fileID: 1073478110}
-  MyArmy: []
+  MyArmy:
+  - {fileID: 1063241860}
   ResourcesUI:
   - {fileID: 311772821}
   - {fileID: 1593173517}
