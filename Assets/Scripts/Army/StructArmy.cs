@@ -2,34 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct StructArmy
+[System.Serializable]
+public class StructArmy
 {
 
-    private string ArmyName;
-    private int People;
-    private Soldiers[] Soldires;
-    private int[] ArmyStruct;
-    private float SumLife;
-    private float SumDmg;
-    private float SumGold;
-    private float SumFood;
-
-    public StructArmy(string name, Soldiers[] Soldires, int[] ArmyStructure, float SumLife, float SumDmg, float SumGold, float SumFood)
-    {
-        ArmyName = name;
-        this.Soldires = Soldires;
-        ArmyStruct = ArmyStructure;
-        int People = 0;
-        for (int i = 0; ArmyStructure.Length < i; i++)
-        {
-            People += ArmyStructure[i];
-        }
-        this.People = People;
-        this.SumLife = SumLife;
-        this.SumDmg = SumDmg;
-        this.SumFood = SumFood;
-        this.SumGold = SumGold;
-    }
-    
+    public string ArmyName;
+    public int People;
+    public List<Soldiers> Soldires;
+    public int[] ArmyStruct;
+    public float SumLife;
+    public float SumDmg;
+    public float SumGold;
+    public float SumFood;
 
 }

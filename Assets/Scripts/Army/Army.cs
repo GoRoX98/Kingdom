@@ -7,12 +7,15 @@ public class Army : MonoBehaviour
 {
     public bool SelectArmy = false;
     public bool CurrentPlace = true;
+    
     private Transform Position;
     private Animator Animator;
 
+    public StructArmy ArmyStructure = new StructArmy();
 
     void Awake()
     {
+        ArmyStructure.Soldires = GameObject.Find("World").GetComponent<WorldList>().SoldiresDB;
         Animator = GetComponent<Animator>();
         Position = GetComponent<Transform>();
     }

@@ -19,6 +19,7 @@ public class MyKingdom : MonoBehaviour
     //Army
     private List<Soldiers> SoldiresTypes;
     private int[] AmountOfSoldires;
+    private int[] SoldiersInArmy;
 
     void Start()
     {
@@ -133,6 +134,16 @@ public class MyKingdom : MonoBehaviour
     public int[] AllSoldires()
     {
         return AmountOfSoldires;
+    }
+
+    public void UpdArmySoldires(int[] SoldiersInArmy)
+    {
+        this.SoldiersInArmy = SoldiersInArmy;
+    }
+
+    public int[] ArmySoldires()
+    {
+        return SoldiersInArmy;
     }
 
     public int SumSoldires()

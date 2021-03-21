@@ -154,27 +154,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7915083820874025929, guid: 76d86deb28821ca43807b55fdb8a6d25, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7915083820874025929, guid: 76d86deb28821ca43807b55fdb8a6d25, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7915083820874025929, guid: 76d86deb28821ca43807b55fdb8a6d25, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7915083820874025929, guid: 76d86deb28821ca43807b55fdb8a6d25, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7915083820874025929, guid: 76d86deb28821ca43807b55fdb8a6d25, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 7915083820874025929, guid: 76d86deb28821ca43807b55fdb8a6d25, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 7915083820874025929, guid: 76d86deb28821ca43807b55fdb8a6d25, type: 3}
       propertyPath: m_LocalScale.x
@@ -276,10 +276,10 @@ RectTransform:
   m_Father: {fileID: 1943521972}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -327.97, y: 490.23}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -327.96997, y: 490.23}
+  m_SizeDelta: {x: -1620, y: -980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &193642437 stripped
 Transform:
@@ -473,6 +473,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Child: {fileID: 0}
+  Parent: {fileID: 0}
+  Parametrs:
+    Integer: 
+    String: []
+  UseParametrs: 0
 --- !u!45 &519420034
 Skybox:
   m_ObjectHideFlags: 0
@@ -655,6 +660,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1586643032}
     m_Modifications:
+    - target: {fileID: 856693308, guid: 606520a50fd5f6f42bf61e8e6946915b, type: 3}
+      propertyPath: UseParametrs
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 388017803192487402, guid: 606520a50fd5f6f42bf61e8e6946915b, type: 3}
       propertyPath: m_Name
       value: Castle
@@ -1198,7 +1207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930827910}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -78.1, y: -29.5, z: 971.99994}
+  m_LocalPosition: {x: -78.1, y: -31.5, z: 971.99994}
   m_LocalScale: {x: 108, y: 108, z: 108}
   m_Children: []
   m_Father: {fileID: 109929261}
