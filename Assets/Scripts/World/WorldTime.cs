@@ -11,7 +11,8 @@ public class WorldTime : MonoBehaviour
     private int month = 3;
     // 1 - spring; 2 - summer; 3 - autumn; 4 - winter; 
     private int season = 1;
-
+    //Triger about new week
+    public bool NewWeek = false;
     /// <summary>
     /// World Time
     /// Every week income
@@ -19,11 +20,13 @@ public class WorldTime : MonoBehaviour
     void FixedUpdate()
     {
         day += Time.deltaTime;
+        NewWeek = false;
 
         if (day >= GameSpeed)
         {
             week += 1;
             day = 0.0f;
+            NewWeek = true;
         }
 
         if (week == 4)

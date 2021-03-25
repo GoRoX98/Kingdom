@@ -1,17 +1,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CreateArmy : MonoBehaviour
 {
+
     public GameObject World;
     public GameObject Player;
 
     public List<Text> fields;
     private Scrollbar[] sliders;
+    //Amount soldires in kingdom
     private int[] amount;
+    //How many hire
     private int[] HowMany;
 
     void Start()
@@ -40,10 +44,21 @@ public class CreateArmy : MonoBehaviour
 
     public void HireArmy(GameObject Army)
     {
+        bool check = false;
+        for (int i =0; HowMany.Length > i; i++)
+        {
+            if (HowMany[i] > 0) check = true;
+        }
 
-        GameObject Castle = GameObject.Find("Castle");
-        Vector3 Pos = new Vector3(Castle.transform.position.x, Castle.transform.position.y - 1f, Castle.transform.position.z - 1f);
-        Instantiate(Army, Pos, Quaternion.identity, GameObject.Find("World").GetComponent<Transform>());
+        if (check == true)
+        {
+            Army.GetComponent<Army>().ArmyStructure.ArmyStruct = HowMany;
+            Army.GetComponent<Army>().ArmyStructure.Soldires = GameObject.Find("World").GetComponent<WorldList>().SoldiresDB;
+            GameObject Castle = GameObject.Find("Castle");
+            Vector3 Pos = new Vector3(Castle.transform.position.x, Castle.transform.position.y - 1f, Castle.transform.position.z - 1f);
+            Instantiate(Army, Pos, Quaternion.identity, GameObject.Find("World").GetComponent<Transform>());
+        }
+        else print("Cant create");
     }
 
 }

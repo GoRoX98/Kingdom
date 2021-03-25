@@ -15,4 +15,5 @@ public class StructArmy
     public float SumGold;
     public float SumFood;
 
+    
 }
