@@ -9,6 +9,7 @@ public class UnitParametrs
     //General param
     public string Name;
     public float SpeedMap;
+    public List<Sprite> Sprites;
     
     //adviser
     public enum AdviserType

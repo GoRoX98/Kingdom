@@ -23,8 +23,8 @@ public class objInfo : MonoBehaviour
     /// </summary>
     public void OnMouseDown()
     {
-        gameObject.GetComponent<Region>().InfoRegion(gameObject);
-        int id = gameObject.GetComponent<Region>().Id();
+        int id = gameObject.GetComponent<Region>().GetId();
+        gameObject.GetComponent<Region>().ThisRegion.PrintInfo();
         Instantiate(pref);
         UpdateText(GameObject.Find("Canvas Region").GetComponent<ListUI>().RegionInfo, id);
     }
@@ -37,7 +37,7 @@ public class objInfo : MonoBehaviour
     /// <param name="id">Id of this Region</param>
     public void UpdateText(List<Text> parent, int id)
     {
-        string[] InfoRegion = gameObject.GetComponent<Region>().Regions[id].Data();
+        string[] InfoRegion = gameObject.GetComponent<Region>().ThisRegion.Data();
         GameObject.Find("Canvas Region").GetComponent<ListUI>().Id = id;
         int i = 0;
         while (3 > i)

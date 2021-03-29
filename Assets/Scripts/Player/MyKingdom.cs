@@ -55,7 +55,7 @@ public class MyKingdom : MonoBehaviour
         MyAmount = 0;
         for (int i = 0; i < Amount; i++)
         {
-            if (Regions[i].GetComponent<Region>().Owner(i) == 1)
+            if (World.GetComponent<WorldList>().Regions[i].InfoOwner() == 1)
             {
                 MyAmount++;
                 if (MyDomain.Count < MyAmount) MyDomain.Add(Regions[i]);

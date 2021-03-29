@@ -30,7 +30,7 @@ public class InteractionUI : MonoBehaviour
     public void Build(int IdBuilding)
     {
         int IdRegion = Convert.ToInt32(GameObject.Find("Canvas Region").GetComponent<ListUI>().Id);
-        GameObject Region = GameObject.FindGameObjectWithTag("Region").GetComponent<Region>().Regions[IdRegion].GetRegion();
+        GameObject Region = GameObject.Find("World").GetComponent<WorldList>().Regions[IdRegion].GetRegion();
         print($"Region {IdRegion} Build {IdBuilding}");
         MyKingdom.GetComponent<Build>().NewBuild(IdRegion, IdBuilding, Region);
         

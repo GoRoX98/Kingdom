@@ -18,7 +18,7 @@ public class Build : MonoBehaviour
         if (verifyCost(BuildingId) == true)
         {
             //verify owner
-            if (ObjRegion.GetComponent<Region>().Owner(id) == 1)
+            if (ObjRegion.GetComponent<Region>().ThisRegion.InfoOwner() == 1)
             {
                 //how many buildings we can build in the region WIP
                 if (ObjRegion.GetComponent<Region>().Buildings.Count < 3)
