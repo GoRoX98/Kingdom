@@ -31,6 +31,11 @@ public struct OrderStruct
         return WeHaveTheOrder;
     }
 
+    public int OrderPos()
+    {
+        return RegionId;
+    }
+
     public void OrderComplete()
     {
         WeHaveTheOrder = false;

@@ -65,10 +65,12 @@ public class Unit : MonoBehaviour
                 }
             }
 
-            if (Stay == true && UnitOrder.OrderStatus() == true && Moving == false)
+            if (Stay == true && UnitOrder.OrderStatus() == true && Moving == false && UnitOrder.OrderPos() != RegionIdPosition)
             {
                 Moving = true;
+                Stay = false;
                 MoveMode();
+                GetComponent<Movement>().LetsMove(Type, UnitOrder.OrderPos());
             }
 
 
@@ -77,7 +79,15 @@ public class Unit : MonoBehaviour
         if (Moving == true)
         {
             RegionPosition();
+            Moving = GetComponent<Movement>().MoveStatus();
+            if (Moving == false) Stay = true;
         }
+
+        if (UnitOrder.OrderStatus() == true)
+        {
+            TryDoOrder();
+        }
+
     }
 
     void OnMouseDown()
@@ -106,6 +116,16 @@ public class Unit : MonoBehaviour
         }
     }
 
+    private void TryDoOrder()
+    {
+        if(Stay == true && UnitOrder.OrderPos() == RegionIdPosition && Moving == false)
+        {
+            UnitOrder.OrderComplete();
+            print("Order complete");
+            MoveMode();
+        }
+    }
+
     private void MoveMode()
     {
         if (Moving == true)
@@ -123,12 +143,12 @@ public class Unit : MonoBehaviour
                 if (Parametrs.TypeOfAdviser == UnitParametrs.AdviserType.Architect)
                 {
                     gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
-                    transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = Parametrs.Sprites[3];
+                    transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = Parametrs.Sprites[2];
                 }
                 else if (Parametrs.TypeOfAdviser == UnitParametrs.AdviserType.Capitan)
                 {
                     gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-                    transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = Parametrs.Sprites[2];
+                    transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = Parametrs.Sprites[3];
                 }
                 else if (Parametrs.TypeOfAdviser == UnitParametrs.AdviserType.Spy)
                 {
@@ -142,10 +162,11 @@ public class Unit : MonoBehaviour
         {
             if (Type == UnitType.Advisor)
             {
-                if (Parametrs.TypeOfAdviser == UnitParametrs.AdviserType.Architect)     MainSprite.sprite = Parametrs.Sprites[3];
-                else if (Parametrs.TypeOfAdviser == UnitParametrs.AdviserType.Capitan)   MainSprite.sprite = Parametrs.Sprites[2];
-                else if (Parametrs.TypeOfAdviser == UnitParametrs.AdviserType.Spy)      MainSprite.sprite = Parametrs.Sprites[1];
+                if (Parametrs.TypeOfAdviser == UnitParametrs.AdviserType.Architect) MainSprite.sprite = Parametrs.Sprites[2];
+                else if (Parametrs.TypeOfAdviser == UnitParametrs.AdviserType.Capitan) MainSprite.sprite = Parametrs.Sprites[3];
+                else    MainSprite.sprite = Parametrs.Sprites[1];
             }
+            Animator.enabled = false;
             GetComponent<PolygonCollider2D>().enabled = false;
             GetComponent<Movement>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = true;

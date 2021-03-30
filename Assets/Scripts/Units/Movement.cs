@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public bool SelectArmy = false;
+    public bool SelectUnit = false;
     public bool CurrentPlace = true;
     public float dist;
 
@@ -15,6 +15,9 @@ public class Movement : MonoBehaviour
 
     private Vector2 currentPos;
     private float tempX;
+    private bool Moving = false;
+    private Unit.UnitType Type;
+    private int RegionId;
 
     void Awake()
     {
@@ -24,56 +27,79 @@ public class Movement : MonoBehaviour
         World = GameObject.Find("World");
     }
 
-    //Select unit
-    void OnMouseDown()
-    {
-        SelectArmy = true;
-        Animator.SetBool("Select", SelectArmy);
-    }
-
     void FixedUpdate()
     {
-        Move();
+        if (Moving == true) Move();
     }
 
     /// <summary>
     /// Movement of unit
     /// </summary>
-    private void Move()
+    public void Move()
     {
         //Deselect unit
         bool temp = Player.GetComponent<Action>().TrigerLMB;
         currentPos = Position.position;
         if (temp == true)
         {
-            SelectArmy = false;
-            Animator.SetBool("Select", SelectArmy);
+            SelectUnit = false;
+            Animator.SetBool("Select", SelectUnit);
         }
-        //Process of movement 
-        if (CurrentPlace == false)
+        //Process of movement v1.1
+        if (CurrentPlace == false && Type == Unit.UnitType.Advisor)
         {
-            dist = tempX - (currentPos.x + Camera.main.orthographicSize);
-            if (dist >= 0.1f || dist <= -0.1f)
-            {
-                CurrentPlace = false;
-                Animator.SetBool("Current Place", CurrentPlace);
-                Animator.SetFloat("Distance", dist);
-            }
+            dist = World.GetComponent<WorldList>().Regions[RegionId].GetPosition().position.x - Position.position.x;
+            
+            if (dist >= 0.1f || dist <= -0.1f)  Animator.SetFloat("Distance", dist);
             else
             {
                 CurrentPlace = true;
+                Moving = false;
                 dist = 0f;
                 Animator.SetBool("Current Place", CurrentPlace);
                 Animator.SetFloat("Distance", dist);
             }
         }
-        //Move where (position)
-        if (SelectArmy == true && Input.GetMouseButtonDown(1))
-        {
-            tempX = Player.GetComponent<Action>().CoordXY.x;
-            dist = tempX - (currentPos.x + Camera.main.orthographicSize);
-            if (dist >= 0.1f || dist <= -0.1f) CurrentPlace = false;
-            else CurrentPlace = true;
-        }
+        //Process of movement 
+        #region OldMove
+        /*        if (CurrentPlace == false)
+                {
+                    dist = tempX - (currentPos.x + Camera.main.orthographicSize);
+                    if (dist >= 0.1f || dist <= -0.1f)
+                    {
+                        CurrentPlace = false;
+                        Animator.SetBool("Current Place", CurrentPlace);
+                        Animator.SetFloat("Distance", dist);
+                    }
+                    else
+                    {
+                        CurrentPlace = true;
+                        dist = 0f;
+                        Animator.SetBool("Current Place", CurrentPlace);
+                        Animator.SetFloat("Distance", dist);
+                    }
+                }
+                //Move where (position)
+                if (SelectUnit == true && Input.GetMouseButtonDown(1))
+                {
+                    tempX = Player.GetComponent<Action>().CoordXY.x;
+                    dist = tempX - (currentPos.x + Camera.main.orthographicSize);
+                    if (dist >= 0.1f || dist <= -0.1f) CurrentPlace = false;
+                    else CurrentPlace = true;
+                }*/
+        #endregion
+    }
+
+    public void LetsMove(Unit.UnitType Type, int RegionId)
+    {
+        Moving = true;
+        this.Type = Type;
+        this.RegionId = RegionId;
+        CurrentPlace = false;
+    }
+
+    public bool MoveStatus()
+    {
+        return Moving;
     }
 }
