@@ -77,12 +77,13 @@
     <Compile Include="Assets\Scripts\UI\InteractionUI.cs" />
     <Compile Include="Assets\Scripts\Units\Unit.cs" />
     <Compile Include="Assets\Scripts\Units\StructArmy.cs" />
-    <Compile Include="Assets\Scripts\Player\OrderStruct.cs" />
+    <Compile Include="Assets\Scripts\Player\Orders\OrderStruct.cs" />
     <Compile Include="Assets\Scripts\UI\objInfo.cs" />
     <Compile Include="Assets\Scripts\Units\Hire.cs" />
     <Compile Include="Assets\Scripts\Units\UnitParametrs.cs" />
     <Compile Include="Assets\Scripts\Player\Economy\Build.cs" />
     <Compile Include="Assets\Scripts\World\Region.cs" />
+    <Compile Include="Assets\Scripts\Player\Orders\NewOrder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

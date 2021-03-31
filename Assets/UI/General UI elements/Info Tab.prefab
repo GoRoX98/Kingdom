@@ -197,6 +197,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Child: {fileID: 0}
+  Parent: {fileID: 0}
+  Parametrs:
+    Integer: 
+    String: []
+  UseParametrs: 0
 --- !u!1 &4807771719392982709
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: {fileID: 0}
   Player: {fileID: 0}
+  Amount: {fileID: 0}
   Type: 0
 --- !u!1 &4957346819425382542
 GameObject:
