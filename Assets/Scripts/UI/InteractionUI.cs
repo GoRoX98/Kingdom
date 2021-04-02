@@ -58,4 +58,9 @@ public class InteractionUI : MonoBehaviour
         if (Parent == null)     Instantiate(Child);
         else    Instantiate(Child, Parent.transform);
     }
+
+    public void NewOrder()
+    {
+        Parent.GetComponent<NewOrder>().CreateOrder();
+    }
 }

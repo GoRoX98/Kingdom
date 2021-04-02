@@ -2,11 +2,14 @@ using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class Unit : MonoBehaviour
 {
+    private NewOrder NewOrder;
+
     public enum UnitType
     {
         Messenger = 0,
@@ -40,12 +43,16 @@ public class Unit : MonoBehaviour
         if (Type == UnitType.Advisor)
         {
             gameObject.AddComponent<BoxCollider2D>();
-            UnitOrder = new OrderStruct(false, 0);
+            UnitOrder = new OrderStruct(false);
         }
     }
 
     void Start()
     {
+        if (Type != UnitType.Messenger)
+        {
+            NewOrder = gameObject.AddComponent<NewOrder>();
+        }
         RegionPosition();
     }
 
@@ -54,6 +61,7 @@ public class Unit : MonoBehaviour
         //Deselect
         if (Player.GetComponent<Action>().TrigerLMB == true) SelectUnit = false;
 
+        //Code for Advisors
         if (Type == UnitType.Advisor)
         {
             if (SelectUnit == true)
@@ -76,6 +84,7 @@ public class Unit : MonoBehaviour
 
         }
 
+        //Movement of unit
         if (Moving == true)
         {
             RegionPosition();
@@ -83,6 +92,7 @@ public class Unit : MonoBehaviour
             if (Moving == false) Stay = true;
         }
 
+        //Try complete order
         if (UnitOrder.OrderStatus() == true)
         {
             TryDoOrder();
@@ -95,7 +105,7 @@ public class Unit : MonoBehaviour
         //Deselect others
         //Player.GetComponent<Action>().TrigerLMB = true;
         SelectUnit = true;
-
+        if (Type != UnitType.Messenger)     NewOrder.OrderUI(1, Parametrs.TypeOfAdviser, gameObject);
     }
 
     private void InitializationAdviser()

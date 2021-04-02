@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Region
   - Building
+  - UI
   layers:
   - Default
   - TransparentFX
