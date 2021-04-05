@@ -5,38 +5,31 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.Windows;
 using UnityEditor;
+using System;
 
 public class NewOrder : MonoBehaviour
 {
     public GameObject PrefabUI;
-    private int Region;
-    private UnitParametrs.AdviserType Who;
-    private GameObject Unit;
-    private Dropdown Options;
+    public int Region;
+    public UnitParametrs.AdviserType Who;
+    public GameObject Unit;
+    public Dropdown Options;
+    public Dropdown AdviserType;
 
     void Start()
     {
-        PrefabUI = GameObject.Find("Canvas").GetComponent<PlayerUI>().PrefsUI[1];
+        PrefabUI = gameObject;
+        Options = GameObject.Find("Order").GetComponent<Dropdown>();
+        AdviserType = gameObject.transform.Find("Info Tab").Find("Who").GetComponent<Dropdown>();
+        PrefabUI.transform.Find("Info Tab").Find("Description").GetComponent<Text>().text = $"Order for region: {Region}";
     }
 
-    /// <summary>
-    /// Generate UI of New Order + write info to global parametrs
-    /// </summary>
-    /// <param name="RegionId"></param>
-    /// <param name="Type"></param>
-    /// <param name="Unit"></param>
-    public void OrderUI(int RegionId, UnitParametrs.AdviserType Type, GameObject Unit)
+    void FixedUpdate()
     {
-        Region = RegionId;
-        Who = Type;
-        this.Unit = Unit;
-        PrefabUI.transform.GetComponent<InteractionUI>().Parent = Unit;
-        PrefabUI.transform.Find("Info Tab").gameObject.transform.Find("For").GetComponent<Text>().text = $"For {Type}";
-        PrefabUI.transform.Find("Info Tab").gameObject.transform.Find("Description").GetComponent<Text>().text = $"Order for region: {RegionId}";
-        Options = PrefabUI.transform.Find("Order").GetComponent<Dropdown>();
-        SetOptions();
-        Instantiate(PrefabUI);
-        Options = GameObject.Find("Order").GetComponent<Dropdown>();
+        if(PrefabUI.transform.Find("Info Tab").Find("Who").gameObject.activeSelf)
+        {
+            InitializedParam();
+        }
     }
 
     /// <summary>
@@ -44,7 +37,7 @@ public class NewOrder : MonoBehaviour
     /// </summary>
     /// <param name="Options">Dropdown menu in UI</param>
     /// <param name="Type">Type of Adviser</param>
-    private void SetOptions()
+    public void SetOptions()
     {
         if (Who == UnitParametrs.AdviserType.Architect)
         {
@@ -65,16 +58,28 @@ public class NewOrder : MonoBehaviour
             Options.options[3].text = "Explore";
         }
     }
-    
-    public void CreateOrder()
+
+    public void InitializedParam()
     {
-        if (Who == UnitParametrs.AdviserType.Architect)
-        {
-            if (Options.captionText.text == "None") print("You choose nothing");
-            if (Options.captionText.text == "Build") print("You choose Build");
-            if (Options.captionText.text == "Boost") print("You choose Boost");
-            if (Options.captionText.text == "Repair") print("You choose Repair");
-        }
+        //print($"{AdviserType.captionText.text}");
+        Who = (UnitParametrs.AdviserType)Enum.Parse(typeof(UnitParametrs.AdviserType), AdviserType.captionText.text);
+        SetOptions();
+        Unit = GameObject.Find($"{AdviserType.captionText.text}");
     }
 
+    public void CreateOrder()
+    {
+        if (Options.captionText.text == "None") print("You choose nothing");
+        if (Options.captionText.text == "Build") print("You choose Build");
+        if (Options.captionText.text == "Boost") print("You choose Boost");
+        if (Options.captionText.text == "Repair") print("You choose Repair");
+        if (Options.captionText.text == "Explore") print("You choose Explore");
+        if (Options.captionText.text == "Spy") print("You choose Spy");
+        if (Options.captionText.text == "Subotage") print("You choose Subotage");
+        OrderStruct Order = Unit.GetComponent<Unit>().UnitOrder;
+
+        //If adviser in the castle
+        if (Unit.GetComponent<Unit>().RegionIdPosition == 0) Unit.GetComponent<Unit>().UnitOrder.NewOrder(Region, Order.ToOrderType(Options.captionText.text));
+        
+    }
 }

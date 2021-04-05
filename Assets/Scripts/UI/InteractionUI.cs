@@ -61,6 +61,33 @@ public class InteractionUI : MonoBehaviour
 
     public void NewOrder()
     {
-        Parent.GetComponent<NewOrder>().CreateOrder();
+        gameObject.GetComponent<NewOrder>().CreateOrder();
+    }
+
+    public void OrderUI()
+    {
+        GameObject PrefabUI = GameObject.Find("Canvas").GetComponent<PlayerUI>().PrefsUI[1];
+        PrefabUI.transform.Find("Info Tab").gameObject.transform.Find("Who").gameObject.SetActive(true);
+        PrefabUI.GetComponent<NewOrder>().Region = GameObject.Find("Canvas Region").GetComponent<ListUI>().Id;
+        Instantiate(PrefabUI);
+    }
+
+    /// <summary>
+    /// Generate UI of New Order + write info to global parametrs (Click from Unit Icon)
+    /// </summary>
+    /// <param name="RegionId"></param>
+    /// <param name="Type"></param>
+    /// <param name="Unit"></param>
+    public void UnitOrderUI(int RegionId, UnitParametrs.AdviserType Type, GameObject Unit)
+    {
+        GameObject PrefabUI = GameObject.Find("Canvas").GetComponent<PlayerUI>().PrefsUI[1];
+        PrefabUI.GetComponent<NewOrder>().Region = RegionId;
+        PrefabUI.GetComponent<NewOrder>().Who = Type;
+        PrefabUI.GetComponent<NewOrder>().Unit = Unit;
+        PrefabUI.transform.GetComponent<InteractionUI>().Parent = Unit;
+        PrefabUI.transform.Find("Info Tab").gameObject.transform.Find("For").GetComponent<Text>().text = $"For {Type}";
+        PrefabUI.GetComponent<NewOrder>().Options = PrefabUI.transform.Find("Order").GetComponent<Dropdown>();
+        PrefabUI.GetComponent<NewOrder>().SetOptions();
+        Instantiate(PrefabUI);
     }
 }

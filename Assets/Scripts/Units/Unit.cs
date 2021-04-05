@@ -29,7 +29,7 @@ public class Unit : MonoBehaviour
     public bool Stay = true;
     public bool Moving = false;
     public bool SelectUnit = false;
-    private OrderStruct UnitOrder;
+    public OrderStruct UnitOrder;
 
 
     void Awake()
@@ -49,10 +49,6 @@ public class Unit : MonoBehaviour
 
     void Start()
     {
-        if (Type != UnitType.Messenger)
-        {
-            NewOrder = gameObject.AddComponent<NewOrder>();
-        }
         RegionPosition();
     }
 
@@ -64,14 +60,6 @@ public class Unit : MonoBehaviour
         //Code for Advisors
         if (Type == UnitType.Advisor)
         {
-            if (SelectUnit == true)
-            {
-                if (Input.GetMouseButtonDown(1))
-                {
-                    UnitOrder.NewOrder(1);
-                    print("New order");
-                }
-            }
 
             if (Stay == true && UnitOrder.OrderStatus() == true && Moving == false && UnitOrder.OrderPos() != RegionIdPosition)
             {
@@ -105,12 +93,7 @@ public class Unit : MonoBehaviour
         //Deselect others
         //Player.GetComponent<Action>().TrigerLMB = true;
         SelectUnit = true;
-        if (Type != UnitType.Messenger)     NewOrder.OrderUI(1, Parametrs.TypeOfAdviser, gameObject);
-    }
-
-    private void InitializationAdviser()
-    {
-
+        if (Type != UnitType.Messenger)    GameObject.Find("Canvas").GetComponent<InteractionUI>().UnitOrderUI(1, Parametrs.TypeOfAdviser, gameObject);
     }
 
     private void RegionPosition()
