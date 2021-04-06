@@ -71,6 +71,11 @@ public struct OrderStruct
         return $"I have order: {WeHaveTheOrder} in location {RegionId}";
     }
 
+    public (int Region, OrderType Type) GetOrder()
+    {
+        return (RegionId, TypeOfOrder);
+    }
+
     /// <summary>
     /// Convert Srting to OrderType
     /// </summary>

@@ -9,7 +9,10 @@ using System;
 
 public class NewOrder : MonoBehaviour
 {
+    public GameObject PrefabUnit;
     public GameObject PrefabUI;
+    public GameObject World;
+
     public int Region;
     public UnitParametrs.AdviserType Who;
     public GameObject Unit;
@@ -18,6 +21,7 @@ public class NewOrder : MonoBehaviour
 
     void Start()
     {
+        World = GameObject.Find("World");
         PrefabUI = gameObject;
         Options = GameObject.Find("Order").GetComponent<Dropdown>();
         AdviserType = gameObject.transform.Find("Info Tab").Find("Who").GetComponent<Dropdown>();
@@ -80,6 +84,17 @@ public class NewOrder : MonoBehaviour
 
         //If adviser in the castle
         if (Unit.GetComponent<Unit>().RegionIdPosition == 0) Unit.GetComponent<Unit>().UnitOrder.NewOrder(Region, Order.ToOrderType(Options.captionText.text));
-        
+        else SendMessenger(Order);
+    }
+
+    private void SendMessenger(OrderStruct Order)
+    {
+        PrefabUnit.name = "Messenger";
+        PrefabUnit.transform.localScale = new Vector2(0.3f, 0.3f);
+        PrefabUnit.transform.position = new Vector2(World.transform.Find("Castle").transform.position.x + 5f, World.transform.Find("Castle").transform.position.y);
+        Order = new OrderStruct(false, Region, Order.ToOrderType(Options.captionText.text));
+        PrefabUnit.GetComponent<Unit>().Type = global::Unit.UnitType.Messenger;
+        PrefabUnit = Instantiate(PrefabUnit, World.transform);
+        PrefabUnit.GetComponent<Unit>().NewMessege(Unit, Order);
     }
 }

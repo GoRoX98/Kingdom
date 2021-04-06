@@ -1364,6 +1364,10 @@ PrefabInstance:
       value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 7058905293660829946, guid: 36d5df30e9dcc854c93726220e8452db, type: 3}
+      propertyPath: Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7058905293660829946, guid: 36d5df30e9dcc854c93726220e8452db, type: 3}
       propertyPath: Parametrs.TypeOfAdviser
       value: 1
       objectReference: {fileID: 0}

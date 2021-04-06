@@ -46,7 +46,7 @@ public class Movement : MonoBehaviour
             Animator.SetBool("Select", SelectUnit);
         }
         //Process of movement v1.1
-        if (CurrentPlace == false && Type == Unit.UnitType.Advisor)
+        if (CurrentPlace == false)
         {
             dist = World.GetComponent<WorldList>().Regions[RegionId].GetPosition().position.x - Position.position.x;
             
@@ -61,33 +61,33 @@ public class Movement : MonoBehaviour
             }
         }
         //Process of movement 
-        #region OldMove
-        /*        if (CurrentPlace == false)
-                {
-                    dist = tempX - (currentPos.x + Camera.main.orthographicSize);
-                    if (dist >= 0.1f || dist <= -0.1f)
+            #region OldMove
+            /*        if (CurrentPlace == false)
                     {
-                        CurrentPlace = false;
-                        Animator.SetBool("Current Place", CurrentPlace);
-                        Animator.SetFloat("Distance", dist);
+                        dist = tempX - (currentPos.x + Camera.main.orthographicSize);
+                        if (dist >= 0.1f || dist <= -0.1f)
+                        {
+                            CurrentPlace = false;
+                            Animator.SetBool("Current Place", CurrentPlace);
+                            Animator.SetFloat("Distance", dist);
+                        }
+                        else
+                        {
+                            CurrentPlace = true;
+                            dist = 0f;
+                            Animator.SetBool("Current Place", CurrentPlace);
+                            Animator.SetFloat("Distance", dist);
+                        }
                     }
-                    else
+                    //Move where (position)
+                    if (SelectUnit == true && Input.GetMouseButtonDown(1))
                     {
-                        CurrentPlace = true;
-                        dist = 0f;
-                        Animator.SetBool("Current Place", CurrentPlace);
-                        Animator.SetFloat("Distance", dist);
-                    }
-                }
-                //Move where (position)
-                if (SelectUnit == true && Input.GetMouseButtonDown(1))
-                {
-                    tempX = Player.GetComponent<Action>().CoordXY.x;
-                    dist = tempX - (currentPos.x + Camera.main.orthographicSize);
-                    if (dist >= 0.1f || dist <= -0.1f) CurrentPlace = false;
-                    else CurrentPlace = true;
-                }*/
-        #endregion
+                        tempX = Player.GetComponent<Action>().CoordXY.x;
+                        dist = tempX - (currentPos.x + Camera.main.orthographicSize);
+                        if (dist >= 0.1f || dist <= -0.1f) CurrentPlace = false;
+                        else CurrentPlace = true;
+                    }*/
+            #endregion
     }
 
     public void LetsMove(Unit.UnitType Type, int RegionId)

@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4729995348501913135}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalPosition: {x: -1.8200002, y: -2.31, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0}
   m_Children:
   - {fileID: 4027593632054121920}
   m_Father: {fileID: 0}
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254b8c7a2f716d245867eccd10add51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectArmy: 0
+  SelectUnit: 0
   CurrentPlace: 1
   dist: 0
 --- !u!114 &7058905293660829946
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae0c41e3a80b3d4ba325ed3985dd875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 1
+  Type: 0
   Parametrs:
     Name: 
     SpeedMap: 0
@@ -236,6 +236,12 @@ MonoBehaviour:
     WorkSpeed: 0
     Victims: 0
     Endurance: 0
+  RegionIdPosition: 0
+  Stay: 1
+  Moving: 0
+  SelectUnit: 0
+  OrderMessege: 1
+  Point: {fileID: 0}
 --- !u!1 &8070044573289510546
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,6 @@ using UnityEngine.UIElements;
 
 public class Unit : MonoBehaviour
 {
-    private NewOrder NewOrder;
 
     public enum UnitType
     {
@@ -31,6 +30,9 @@ public class Unit : MonoBehaviour
     public bool SelectUnit = false;
     public OrderStruct UnitOrder;
 
+    public bool OrderMessege = false;
+    public GameObject Point;
+
 
     void Awake()
     {
@@ -40,16 +42,27 @@ public class Unit : MonoBehaviour
         Player = GameObject.Find("Player");
         World = GameObject.Find("World");
         Parametrs.Sprites = World.GetComponent<WorldList>().UnitSprites;
-        if (Type == UnitType.Advisor)
-        {
-            gameObject.AddComponent<BoxCollider2D>();
-            UnitOrder = new OrderStruct(false);
-        }
     }
 
     void Start()
     {
         RegionPosition();
+        if (Type == UnitType.Advisor)
+        {
+            gameObject.AddComponent<BoxCollider2D>();
+            UnitOrder = new OrderStruct(false);
+        }
+        if (Type == UnitType.Messenger)
+        {
+            if (OrderMessege == true)
+            {
+                Moving = true;
+                Stay = false;
+                MoveMode();
+                GetComponent<Movement>().LetsMove(Type, Point.GetComponent<Unit>().RegionIdPosition);
+            }
+            //else Destroy(gameObject);
+        }
     }
 
     void FixedUpdate()
@@ -77,7 +90,11 @@ public class Unit : MonoBehaviour
         {
             RegionPosition();
             Moving = GetComponent<Movement>().MoveStatus();
-            if (Moving == false) Stay = true;
+            if (Moving == false)
+            {
+                Stay = true;
+                if (Type == UnitType.Messenger) Delivered();
+            }
         }
 
         //Try complete order
@@ -127,12 +144,13 @@ public class Unit : MonoBehaviour
             Animator.enabled = true;
             GetComponent<PolygonCollider2D>().enabled = true;
             GetComponent<Movement>().enabled = true;
-            GetComponent<BoxCollider2D>().enabled = false;
-            gameObject.transform.localScale = new Vector2(0.3f, 0.3f);
-            gameObject.transform.position = new Vector2(Position.position.x, -3.5f);
-            //make icon
+            //make icon + param for advisor
             if (Type == UnitType.Advisor)
             {
+                GetComponent<BoxCollider2D>().enabled = false;
+                gameObject.transform.localScale = new Vector2(0.3f, 0.3f);
+                gameObject.transform.position = new Vector2(Position.position.x, -3.5f);
+
                 if (Parametrs.TypeOfAdviser == UnitParametrs.AdviserType.Architect)
                 {
                     gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
@@ -148,8 +166,8 @@ public class Unit : MonoBehaviour
                     gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
                     transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = Parametrs.Sprites[1];
                 }
+                transform.GetChild(0).gameObject.SetActive(true);
             }
-            transform.GetChild(0).gameObject.SetActive(true);
         }
         else
         {
@@ -157,16 +175,30 @@ public class Unit : MonoBehaviour
             {
                 if (Parametrs.TypeOfAdviser == UnitParametrs.AdviserType.Architect) MainSprite.sprite = Parametrs.Sprites[2];
                 else if (Parametrs.TypeOfAdviser == UnitParametrs.AdviserType.Capitan) MainSprite.sprite = Parametrs.Sprites[3];
-                else    MainSprite.sprite = Parametrs.Sprites[1];
+                else MainSprite.sprite = Parametrs.Sprites[1];
+                Animator.enabled = false;
+                GetComponent<PolygonCollider2D>().enabled = false;
+                GetComponent<Movement>().enabled = false;
+                GetComponent<BoxCollider2D>().enabled = true;
+                gameObject.transform.localScale = new Vector2(4f, 4f);
+                gameObject.transform.position = new Vector2(Position.position.x, -0.1f);
+                gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                transform.GetChild(0).gameObject.SetActive(false);
             }
-            Animator.enabled = false;
-            GetComponent<PolygonCollider2D>().enabled = false;
-            GetComponent<Movement>().enabled = false;
-            GetComponent<BoxCollider2D>().enabled = true;
-            gameObject.transform.localScale = new Vector2(4f, 4f);
-            gameObject.transform.position = new Vector2(Position.position.x, -0.1f);
-            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-            transform.GetChild(0).gameObject.SetActive(false);
+            //else Destroy(gameObject);
         }
+    }
+
+    public void NewMessege(GameObject Unit, OrderStruct Order)
+    {
+        UnitOrder = Order;
+        OrderMessege = true;
+        Point = Unit;
+    }
+
+    public void Delivered()
+    {
+        Point.GetComponent<Unit>().UnitOrder.NewOrder(UnitOrder.GetOrder().Region, UnitOrder.GetOrder().Type);
+        Destroy(gameObject);
     }
 }
