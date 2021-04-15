@@ -61,7 +61,7 @@ public class Unit : MonoBehaviour
                 MoveMode();
                 GetComponent<Movement>().LetsMove(Type, Point.GetComponent<Unit>().RegionIdPosition);
             }
-            //else Destroy(gameObject);
+            else Destroy(gameObject);
         }
     }
 
@@ -101,6 +101,12 @@ public class Unit : MonoBehaviour
         if (UnitOrder.OrderStatus() == true)
         {
             TryDoOrder();
+            if (Type == UnitType.Army && Moving == false)
+            {
+                Moving = true;
+                Stay = false;
+                GetComponent<Movement>().LetsMove(Type, UnitOrder.OrderPos());
+            }
         }
 
     }
@@ -108,9 +114,9 @@ public class Unit : MonoBehaviour
     void OnMouseDown()
     {
         //Deselect others
-        //Player.GetComponent<Action>().TrigerLMB = true;
+        Player.GetComponent<Action>().TrigerLMB = true;
         SelectUnit = true;
-        if (Type != UnitType.Messenger)    GameObject.Find("Canvas").GetComponent<InteractionUI>().UnitOrderUI(1, Parametrs.TypeOfAdviser, gameObject);
+        if (Type != UnitType.Messenger)     GameObject.Find("Canvas").GetComponent<InteractionUI>().UnitOrderUI(1, Parametrs.TypeOfAdviser, gameObject);
     }
 
     private void RegionPosition()
@@ -128,11 +134,17 @@ public class Unit : MonoBehaviour
 
     private void TryDoOrder()
     {
-        if(Stay == true && UnitOrder.OrderPos() == RegionIdPosition && Moving == false)
+        if(Stay == true && UnitOrder.OrderPos() == RegionIdPosition && Moving == false && Type != UnitType.Army)
         {
             UnitOrder.OrderComplete();
             print("Order complete");
             MoveMode();
+        }
+
+        if (Stay == true && UnitOrder.OrderPos() == RegionIdPosition && Moving == false && Type == UnitType.Army)
+        {
+            UnitOrder.OrderComplete();
+            print("Order complete");
         }
     }
 
@@ -185,7 +197,7 @@ public class Unit : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
                 transform.GetChild(0).gameObject.SetActive(false);
             }
-            //else Destroy(gameObject);
+            else Destroy(gameObject);
         }
     }
 

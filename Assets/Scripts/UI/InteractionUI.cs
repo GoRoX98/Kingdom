@@ -87,7 +87,6 @@ public class InteractionUI : MonoBehaviour
         PrefabUI.transform.Find("Info Tab").gameObject.transform.Find("Who").gameObject.SetActive(false);
         PrefabUI.transform.GetComponent<InteractionUI>().Parent = Unit;
         PrefabUI.transform.Find("Info Tab").gameObject.transform.Find("For").GetComponent<Text>().text = $"For {Type}";
-        PrefabUI.GetComponent<NewOrder>().Options = PrefabUI.transform.Find("Order").GetComponent<Dropdown>();
         PrefabUI.GetComponent<NewOrder>().SetOptions();
         Instantiate(PrefabUI);
     }

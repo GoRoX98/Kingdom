@@ -14,7 +14,7 @@ public struct OrderStruct
         Spy,
         Subotage,
         Deffense,
-        Raid,
+        Capture,
         Attack
     }
     public enum OrderUrgency
@@ -90,6 +90,9 @@ public struct OrderStruct
         else if(Type == "Repair") newOrder = OrderType.Repair;
         else if(Type == "Explore") newOrder = OrderType.Explore;
         else if(Type == "Spy") newOrder = OrderType.Spy;
+        else if (Type == "Deffense") newOrder = OrderType.Deffense;
+        else if (Type == "Attack") newOrder = OrderType.Attack;
+        else if (Type == "Capture") newOrder = OrderType.Capture;
         else newOrder = OrderType.None;
 
         return newOrder;

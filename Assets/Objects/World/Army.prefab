@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 5541421511288895812}
   - component: {fileID: 1109594253642937346}
   - component: {fileID: 5272783458112141780}
+  - component: {fileID: -3690231676864719662}
   - component: {fileID: 1274744181316859892}
+  - component: {fileID: -5254343357404682378}
   m_Layer: 0
   m_Name: Army
   m_TagString: Untagged
@@ -198,6 +200,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-3690231676864719662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291816642930682823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 254b8c7a2f716d245867eccd10add51e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectUnit: 0
+  CurrentPlace: 1
+  dist: 0
 --- !u!114 &1274744181316859892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,3 +239,30 @@ MonoBehaviour:
     SumDmg: 0
     SumGold: 0
     SumFood: 0
+--- !u!114 &-5254343357404682378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291816642930682823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae0c41e3a80b3d4ba325ed3985dd875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 2
+  Parametrs:
+    Name: 
+    SpeedMap: 0
+    Sprites: []
+    TypeOfAdviser: 0
+    WorkSpeed: 0
+    Victims: 0
+    Endurance: 0
+  RegionIdPosition: 0
+  Stay: 1
+  Moving: 0
+  SelectUnit: 0
+  OrderMessege: 0
+  Point: {fileID: 0}

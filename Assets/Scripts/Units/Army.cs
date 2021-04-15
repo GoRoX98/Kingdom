@@ -5,45 +5,23 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class Army : MonoBehaviour
-{
-    public bool SelectArmy = false;
-    public bool CurrentPlace = true;
-    public float dist;
+{public StructArmy ArmyStructure = new StructArmy();
 
     private GameObject World;
-    private GameObject Player;
-    private Transform Position;
-    private Animator Animator;
-
-    private Vector2 currentPos;
-    private float tempX;
-
-    public StructArmy ArmyStructure = new StructArmy();
 
     void Awake()
     {
-        ArmyStructure.Soldires = GameObject.Find("World").GetComponent<WorldList>().SoldiresDB;
-        Animator = GetComponent<Animator>();
-        Position = GetComponent<Transform>();
-        Player = GameObject.Find("Player");
         World = GameObject.Find("World");
-    }
-
-    //Select army
-    void OnMouseDown()
-    {
-        SelectArmy = true;
-        Animator.SetBool("Select", SelectArmy);
+        ArmyStructure.Soldires = GameObject.Find("World").GetComponent<WorldList>().SoldiresDB;
     }
 
 
     void FixedUpdate()
     {
-        ArmyMovement();
         if (World.GetComponent<WorldTime>().NewWeek == true) ArmyStruct();
     }
 
-    /// <summary>
+/*    /// <summary>
     /// Movement of army
     /// </summary>
     private void ArmyMovement()
@@ -82,7 +60,7 @@ public class Army : MonoBehaviour
             if (dist >= 0.1f || dist <= -0.1f) CurrentPlace = false;
             else CurrentPlace = true;
         }
-    }
+    }*/
 
     private void ArmyStruct()
     {

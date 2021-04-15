@@ -13,8 +13,6 @@ public class Movement : MonoBehaviour
     private Transform Position;
     private Animator Animator;
 
-    private Vector2 currentPos;
-    private float tempX;
     private bool Moving = false;
     private Unit.UnitType Type;
     private int RegionId;
@@ -39,7 +37,6 @@ public class Movement : MonoBehaviour
     {
         //Deselect unit
         bool temp = Player.GetComponent<Action>().TrigerLMB;
-        currentPos = Position.position;
         if (temp == true)
         {
             SelectUnit = false;

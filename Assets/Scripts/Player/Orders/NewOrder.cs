@@ -61,11 +61,16 @@ public class NewOrder : MonoBehaviour
             Options.options[2].text = "Subotage";
             Options.options[3].text = "Explore";
         }
+        if (Unit.GetComponent<Unit>().Type == global::Unit.UnitType.Army)
+        {
+            Options.options[1].text = "Deffense";
+            Options.options[2].text = "Attack";
+            Options.options[3].text = "Capture";
+        }
     }
 
     public void InitializedParam()
     {
-        //print($"{AdviserType.captionText.text}");
         Who = (UnitParametrs.AdviserType)Enum.Parse(typeof(UnitParametrs.AdviserType), AdviserType.captionText.text);
         SetOptions();
         Unit = GameObject.Find($"{AdviserType.captionText.text}");
@@ -80,6 +85,10 @@ public class NewOrder : MonoBehaviour
         if (Options.captionText.text == "Explore") print("You choose Explore");
         if (Options.captionText.text == "Spy") print("You choose Spy");
         if (Options.captionText.text == "Subotage") print("You choose Subotage");
+        if (Options.captionText.text == "Deffense") print("You choose Deffense");
+        if (Options.captionText.text == "Attack") print("You choose Attack");
+        if (Options.captionText.text == "Capture") print("You choose Capture");
+        if (Options.captionText.text == "Raid") print("You choose Raid");
         OrderStruct Order = Unit.GetComponent<Unit>().UnitOrder;
 
         //If adviser in the castle
