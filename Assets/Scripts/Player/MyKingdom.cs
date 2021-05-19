@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MyKingdom : MonoBehaviour
 {
-    public GameObject World;
+    private GameObject World;
 
 
     public List<GameObject> MyDomain;
@@ -23,8 +23,10 @@ public class MyKingdom : MonoBehaviour
 
     void Start()
     {
-        Amount = GameObject.Find("World").GetComponent<World>().AmountOfRegions;
-        Regions = GameObject.Find("World").GetComponent<World>().Regions;
+        World = GameObject.Find("World");
+        Regions = GameObject.FindGameObjectsWithTag("Region");
+        Amount = Regions.Length;
+        print(Amount);
         TempMonth = World.GetComponent<WorldTime>().GetTime()[1];
 
         SoldiresTypes = World.GetComponent<WorldList>().SoldiresDB;
@@ -55,7 +57,7 @@ public class MyKingdom : MonoBehaviour
         MyAmount = 0;
         for (int i = 0; i < Amount; i++)
         {
-            if (World.GetComponent<WorldList>().Regions[i].InfoOwner() == 1)
+            if (World.GetComponent<Generation>().Regions[i].InfoOwner() == 1)
             {
                 MyAmount++;
                 if (MyDomain.Count < MyAmount) MyDomain.Add(Regions[i]);

@@ -45,7 +45,7 @@ public class Movement : MonoBehaviour
         //Process of movement v1.1
         if (CurrentPlace == false)
         {
-            dist = World.GetComponent<WorldList>().Regions[RegionId].GetPosition().position.x - Position.position.x;
+            dist = World.GetComponent<Generation>().Regions[RegionId].GetPosition().position.x - Position.position.x;
             
             if (dist >= 0.1f || dist <= -0.1f)  Animator.SetFloat("Distance", dist);
             else

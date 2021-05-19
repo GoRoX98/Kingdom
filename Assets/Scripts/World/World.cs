@@ -7,18 +7,11 @@ public class World : MonoBehaviour
 
     public GameObject[] Regions;
     public int AmountOfRegions;
+    public bool Generation = true;
 
 
-    void Awake()
+    private void Start()
     {
         Regions = GameObject.FindGameObjectsWithTag("Region");
-        AmountOfRegions = Regions.Length;
-        print(AmountOfRegions);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

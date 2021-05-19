@@ -9,8 +9,8 @@ public class PlayerUI : MonoBehaviour
     
     private int[] CurrentTime;
     public GameObject Oclock;
-    public GameObject World;
-    public GameObject Player;
+    private GameObject World;
+    private GameObject Player;
 
     public List<Text> MyArmy;
     public List<Text> ResourcesUI;
@@ -20,6 +20,8 @@ public class PlayerUI : MonoBehaviour
 
     void Start()
     {
+        World = GameObject.Find("World");
+        Player = GameObject.Find("Player");
         resText();
         Clock();
     }

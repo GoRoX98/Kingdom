@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2022322601981494886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2022322601981494889}
+  - component: {fileID: 2022322601981494888}
+  - component: {fileID: 2022322601981494891}
+  - component: {fileID: 2022322601981494890}
+  - component: {fileID: -6860854311884802542}
+  m_Layer: 0
+  m_Name: World
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2022322601981494889
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022322601981494886}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2022322601981494888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022322601981494886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d32d3bd1087cf40b42728c610d7db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Regions: []
+  AmountOfRegions: 0
+  Generation: 1
+--- !u!114 &2022322601981494891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022322601981494886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78877b2abefc5934ca16004ae1778cac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BuildingsGO:
+  - {fileID: 3907776070166230493, guid: e3032c9334e13b5468be00eedc7253f9, type: 3}
+  - {fileID: 4644796403778667500, guid: c96e082eef7b2b843b1fe995b48bb8b1, type: 3}
+  - {fileID: 397052264728944256, guid: 72733cd740cca4b4fa657df5b3fbc88e, type: 3}
+  BuildingsList: []
+  Season:
+  - spring
+  - summer
+  - autumn
+  - winter
+  Month:
+  - March
+  - April
+  - May
+  - June
+  - July
+  - August
+  - September
+  - October
+  - November
+  - December
+  - Junuary
+  - February
+  SoldiresDB:
+  - Name: Recruit
+    Life: 5
+    Damage: 2
+    Speed: 1
+    HireGold: 0.1
+    WeekFood: 0.1
+    WeekGold: 0.05
+  - Name: Archer
+    Life: 4
+    Damage: 3
+    Speed: 1
+    HireGold: 0.15
+    WeekFood: 0.1
+    WeekGold: 0.1
+  - Name: Cavalary
+    Life: 10
+    Damage: 5
+    Speed: 2
+    HireGold: 0.3
+    WeekFood: 0.2
+    WeekGold: 0.15
+  UnitSprites:
+  - {fileID: 21300000, guid: 4d83d0d535dd27649a34d988520e4471, type: 3}
+  - {fileID: 21300000, guid: 71294dc426a4d3846bb102c2eeef4af7, type: 3}
+  - {fileID: 21300000, guid: bbe7cc09e62773d4181f3167a0460fdf, type: 3}
+  - {fileID: 21300000, guid: 923fc43e51239e040bf8ebaf01b7d2da, type: 3}
+  - {fileID: 0}
+--- !u!114 &2022322601981494890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022322601981494886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c6d97f06a5dcf64a8033868274abdcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameSpeed: 2
+  NewWeek: 0
+--- !u!114 &-6860854311884802542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022322601981494886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e748c313a53ae9946992466fff58bc03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RegionsPrefabs:
+  - {fileID: 6592559300711724439, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
+  Regions: []
+  RegionsTransform: []

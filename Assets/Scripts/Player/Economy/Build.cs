@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Build : MonoBehaviour
 {
-    public GameObject World;
-    public GameObject PlayerUI;
+    private GameObject World;
+    private GameObject PlayerUI;
+
+    private void Start()
+    {
+        World = GameObject.Find("World");
+        PlayerUI = GameObject.Find("Canvas");
+    }
 
     /// <summary>
     /// This function create a new building
