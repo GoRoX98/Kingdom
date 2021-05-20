@@ -27,6 +27,13 @@ public class Generation : MonoBehaviour
         }
     }
 
+
+    #region Start Generate
+    /// <summary>
+    /// Generate regions
+    /// </summary>
+    /// <param name="length">How many regions</param>
+    /// <param name="Pos">Global param of position</param>
     private void WorldGenerator(int length, Vector3 Pos)
     {
         for (int i = 0; i < length; i++)
@@ -34,6 +41,7 @@ public class Generation : MonoBehaviour
             GameObject Region = Instantiate(RegionsPrefabs[0], Pos, Quaternion.identity, gameObject.transform);
             Region.name = $"Region {i}";
             GenerateRegion(Region, i);
+            if (i == 0 || i + 1 == length) SpawnCastle(Region);
             Pos.x += 6;
         }
         
@@ -55,4 +63,13 @@ public class Generation : MonoBehaviour
         Regions.Add(new StructRegion(i, "Test Name", 0, position, Owner, ThisRegion));
         ThisRegion.GetComponent<Region>().SetStruct(Regions[i]);
     }
+    #endregion
+
+    private void SpawnCastle(GameObject ThisRegion)
+    {
+        Vector3 Pos = new Vector3(ThisRegion.transform.position.x, ThisRegion.transform.position.y + 1.9f, -1);
+        GameObject Castle = Instantiate(RegionsPrefabs[1], Pos, Quaternion.identity, ThisRegion.transform);
+        Castle.transform.localScale = new Vector3(2, 1.5f, 1);
+    }
+
 }

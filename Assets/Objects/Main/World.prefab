@@ -140,5 +140,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RegionsPrefabs:
   - {fileID: 6592559300711724439, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
+  - {fileID: 388017803192487402, guid: 606520a50fd5f6f42bf61e8e6946915b, type: 3}
   Regions: []
   RegionsTransform: []
