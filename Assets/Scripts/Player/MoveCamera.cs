@@ -15,7 +15,7 @@ public class MoveCamera : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.A)) playerCamera.transform.position = new Vector2(playerCamera.position.x - speed, playerCamera.position.y);
-        if (Input.GetKey(KeyCode.D)) playerCamera.transform.position = new Vector2(playerCamera.position.x + speed, playerCamera.position.y);
+        if (Input.GetKey(KeyCode.A)) playerCamera.transform.position = new Vector3(playerCamera.position.x - speed, playerCamera.position.y, -10f);
+        if (Input.GetKey(KeyCode.D)) playerCamera.transform.position = new Vector3(playerCamera.position.x + speed, playerCamera.position.y, -10f);
     }
 }

@@ -10,6 +10,8 @@ public class Generation : MonoBehaviour
     public List<StructRegion> Regions = new List<StructRegion>();
     //Transform of Regions
     public List<Transform> RegionsTransform = new List<Transform>();
+    //Pref of Advisers
+    public GameObject PrefAdviser;
 
 
     private void Awake()
@@ -41,7 +43,11 @@ public class Generation : MonoBehaviour
             GameObject Region = Instantiate(RegionsPrefabs[0], Pos, Quaternion.identity, gameObject.transform);
             Region.name = $"Region {i}";
             GenerateRegion(Region, i);
-            if (i == 0 || i + 1 == length) SpawnCastle(Region);
+            if (i == 0 || i + 1 == length)
+            {
+                Transform Castle = SpawnCastle(Region);
+                SpawnAdvisers(Castle);
+            }
             Pos.x += 6;
         }
         
@@ -65,11 +71,33 @@ public class Generation : MonoBehaviour
     }
     #endregion
 
-    private void SpawnCastle(GameObject ThisRegion)
+    private Transform SpawnCastle(GameObject ThisRegion)
     {
         Vector3 Pos = new Vector3(ThisRegion.transform.position.x, ThisRegion.transform.position.y + 1.9f, -1);
         GameObject Castle = Instantiate(RegionsPrefabs[1], Pos, Quaternion.identity, ThisRegion.transform);
         Castle.transform.localScale = new Vector3(2, 1.5f, 1);
+        return Castle.transform;
+    }
+
+    private void SpawnAdvisers(Transform Castle)
+    {
+        Vector3 Pos = new Vector3(Castle.position.x - 1.5f, Castle.position.y + 2.5f, -1);
+        for (int i = 0; i < 3; i++)
+        {
+            GameObject Adviser = Instantiate(PrefAdviser, Pos, Quaternion.identity, transform.Find("Player"));
+            if (i == 1)
+            {
+                Adviser.GetComponent<SpriteRenderer>().sprite = GameObject.Find("World").GetComponent<WorldList>().UnitSprites[1];
+                Adviser.GetComponent<Unit>().Parametrs.TypeOfAdviser = UnitParametrs.AdviserType.Spy;
+            }
+            else if (i == 2)
+            {
+                Adviser.GetComponent<SpriteRenderer>().sprite = GameObject.Find("World").GetComponent<WorldList>().UnitSprites[2];
+                Adviser.GetComponent<Unit>().Parametrs.TypeOfAdviser = UnitParametrs.AdviserType.Architect;
+            }
+            
+            Pos.x += 1.5f;
+        }
     }
 
 }

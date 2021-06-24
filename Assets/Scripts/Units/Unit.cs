@@ -122,7 +122,7 @@ public class Unit : MonoBehaviour
     private void RegionPosition()
     {
         GameObject[] Regions = World.GetComponent<World>().Regions;
-        for (int i = 0; Regions.Length >= i; i++)
+        for (int i = 0; Regions.Length > i; i++)
         {
             if (Position.position.x > Regions[i].GetComponent<Transform>().position.x - 2.99f && Position.position.x < Regions[i].GetComponent<Transform>().position.x + 3.01f)
             {

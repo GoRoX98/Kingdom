@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6860854311884802542, guid: f1d240671e4d4764191d1827ca171a6c, type: 3}
+      propertyPath: Adviser
+      value: 
+      objectReference: {fileID: 174995102346175043, guid: b2fe2fba046dfc94b8f13870d95a7975, type: 3}
+    - target: {fileID: -6860854311884802542, guid: f1d240671e4d4764191d1827ca171a6c, type: 3}
+      propertyPath: PrefAdviser
+      value: 
+      objectReference: {fileID: 174995102346175043, guid: b2fe2fba046dfc94b8f13870d95a7975, type: 3}
     - target: {fileID: 2022322601981494886, guid: f1d240671e4d4764191d1827ca171a6c, type: 3}
       propertyPath: m_Name
       value: World
@@ -473,7 +481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1252409072257911700, guid: c1532ed9cbf99684f8923e49ef5d47d8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -10.93
       objectReference: {fileID: 0}
     - target: {fileID: 1252409072257911700, guid: c1532ed9cbf99684f8923e49ef5d47d8, type: 3}
       propertyPath: m_LocalRotation.w

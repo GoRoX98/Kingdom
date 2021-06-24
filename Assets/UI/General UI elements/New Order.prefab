@@ -1628,7 +1628,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: For Architect
+  m_Text: For Spy
 --- !u!1 &3590386413149415624
 GameObject:
   m_ObjectHideFlags: 0
@@ -2140,11 +2140,11 @@ MonoBehaviour:
     m_Options:
     - m_Text: None
       m_Image: {fileID: 21300000, guid: 33a6b1d5d3dcda340bce65f7f5761e7f, type: 3}
-    - m_Text: Build
+    - m_Text: Spy
       m_Image: {fileID: 21300000, guid: 753b73b78eacd5c4bab29ba84e6935b0, type: 3}
-    - m_Text: Boost
+    - m_Text: Subotage
       m_Image: {fileID: 21300000, guid: 753b73b78eacd5c4bab29ba84e6935b0, type: 3}
-    - m_Text: Repair
+    - m_Text: Explore
       m_Image: {fileID: 21300000, guid: 753b73b78eacd5c4bab29ba84e6935b0, type: 3}
     - m_Text: Raid
       m_Image: {fileID: 0}
@@ -2821,7 +2821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6210688172462224321
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3296,8 +3296,8 @@ MonoBehaviour:
   PrefabUnit: {fileID: 4729995348501913135, guid: 36d5df30e9dcc854c93726220e8452db, type: 3}
   PrefabUI: {fileID: 8023584527650226606}
   World: {fileID: 0}
-  Region: 0
-  Who: 1
+  Region: 1
+  Who: 2
   Unit: {fileID: 0}
   Options: {fileID: 287739165801513719}
   AdviserType: {fileID: 0}
