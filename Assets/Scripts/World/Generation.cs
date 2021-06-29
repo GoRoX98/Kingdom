@@ -12,10 +12,29 @@ public class Generation : MonoBehaviour
     public List<Transform> RegionsTransform = new List<Transform>();
     //Pref of Advisers
     public GameObject PrefAdviser;
+    //Other prefabs
+    public List<GameObject> PrefabList = new List<GameObject>();
+    //1 or 2 players
+    public bool PVP = false;
+    //Player List
+    public GameObject[] PlayerList;
 
 
     private void Awake()
     {
+        PlayerList = new GameObject[2];
+        if (PVP == true)
+        {
+
+        }
+        else
+        {
+            GameObject Player = Instantiate(PrefabList[0], GameObject.Find("Main Camera").transform);
+            Player.name = "Player";
+            GameObject AI = new GameObject("AI");
+            PlayerList[0] = Player;
+            PlayerList[1] = AI;
+        }
         Vector3 Pos = gameObject.transform.position;
         Pos.y -= 4;
         if (GetComponent<World>().Generation == true) WorldGenerator(GetComponent<World>().AmountOfRegions, Pos);
@@ -46,7 +65,8 @@ public class Generation : MonoBehaviour
             if (i == 0 || i + 1 == length)
             {
                 Transform Castle = SpawnCastle(Region);
-                SpawnAdvisers(Castle);
+                if (i == 0) SpawnAdvisers(Castle, PlayerList[0]);
+                else if (i + 1 == length) SpawnAdvisers(Castle, PlayerList[1]);
             }
             Pos.x += 6;
         }
@@ -79,12 +99,14 @@ public class Generation : MonoBehaviour
         return Castle.transform;
     }
 
-    private void SpawnAdvisers(Transform Castle)
+    private void SpawnAdvisers(Transform Castle, GameObject Parent)
     {
+        GameObject Advisers = Instantiate(gameObject, Parent.transform);
+        Advisers.name = $"Advisers_{Parent.name}";
         Vector3 Pos = new Vector3(Castle.position.x - 1.5f, Castle.position.y + 2.5f, -1);
         for (int i = 0; i < 3; i++)
         {
-            GameObject Adviser = Instantiate(PrefAdviser, Pos, Quaternion.identity, transform.Find("Player"));
+            GameObject Adviser = Instantiate(PrefAdviser, Pos, Quaternion.identity, Advisers.transform);
             if (i == 1)
             {
                 Adviser.GetComponent<SpriteRenderer>().sprite = GameObject.Find("World").GetComponent<WorldList>().UnitSprites[1];

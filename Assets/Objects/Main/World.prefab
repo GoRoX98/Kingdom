@@ -143,3 +143,7 @@ MonoBehaviour:
   - {fileID: 388017803192487402, guid: 606520a50fd5f6f42bf61e8e6946915b, type: 3}
   Regions: []
   RegionsTransform: []
+  PrefAdviser: {fileID: 174995102346175043, guid: b2fe2fba046dfc94b8f13870d95a7975, type: 3}
+  PrefabList:
+  - {fileID: 6718527193126819689, guid: 02acfdb643bdb1148861b71cbe27e09b, type: 3}
+  PVP: 0
