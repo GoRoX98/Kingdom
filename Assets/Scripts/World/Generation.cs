@@ -101,8 +101,8 @@ public class Generation : MonoBehaviour
 
     private void SpawnAdvisers(Transform Castle, GameObject Parent)
     {
-        GameObject Advisers = Instantiate(gameObject, Parent.transform);
-        Advisers.name = $"Advisers_{Parent.name}";
+        GameObject Advisers = new GameObject($"Advisers_{Parent.name}");
+        Advisers.gameObject.transform.SetParent(Parent.transform);
         Vector3 Pos = new Vector3(Castle.position.x - 1.5f, Castle.position.y + 2.5f, -1);
         for (int i = 0; i < 3; i++)
         {
