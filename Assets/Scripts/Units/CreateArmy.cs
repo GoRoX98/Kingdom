@@ -41,7 +41,12 @@ public class CreateArmy : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Spawn Army GameObject.
+    /// Castle - предстоит переписать, пока не знаю как логически игра будет определять Игрок 1 или Игрок 2.
+    /// Костыль.
+    /// </summary>
+    /// <param name="Army">GO of Army on the Scene</param>
     public void HireArmy(GameObject Army)
     {
         bool check = false;
@@ -54,7 +59,7 @@ public class CreateArmy : MonoBehaviour
         {
             Army.GetComponent<Army>().ArmyStructure.ArmyStruct = HowMany;
             Army.GetComponent<Army>().ArmyStructure.Soldires = GameObject.Find("World").GetComponent<WorldList>().SoldiresDB;
-            GameObject Castle = GameObject.Find("Castle");
+            GameObject Castle = GameObject.FindGameObjectWithTag("Player").GetComponent<MyKingdom>().MyCastle;
             Vector3 Pos = new Vector3(Castle.transform.position.x, Castle.transform.position.y - 1f, Castle.transform.position.z - 1f);
             Instantiate(Army, Pos, Quaternion.identity, GameObject.Find("World").GetComponent<Transform>());
         }

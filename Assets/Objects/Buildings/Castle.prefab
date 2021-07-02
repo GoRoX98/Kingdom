@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 856693308}
   m_Layer: 0
   m_Name: Castle
-  m_TagString: Untagged
+  m_TagString: Castle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,6 +180,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Child: {fileID: 4853585441681764132, guid: 2dd512926d237a441963aa5ef6b863f8, type: 3}
+  Parent: {fileID: 0}
   Parametrs:
     Integer: 
     String: []
+  UseParametrs: 0

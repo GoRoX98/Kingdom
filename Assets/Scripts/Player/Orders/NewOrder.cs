@@ -61,19 +61,17 @@ public class NewOrder : MonoBehaviour
             Options.options[2].text = "Subotage";
             Options.options[3].text = "Explore";
         }
-        if (Unit.GetComponent<Unit>().Type == global::Unit.UnitType.Army)
-        {
-            Options.options[1].text = "Deffense";
-            Options.options[2].text = "Attack";
-            Options.options[3].text = "Capture";
-        }
     }
 
     public void InitializedParam()
     {
         Who = (UnitParametrs.AdviserType)Enum.Parse(typeof(UnitParametrs.AdviserType), AdviserType.captionText.text);
         SetOptions();
-        Unit = GameObject.Find($"{AdviserType.captionText.text}");
+        for (int i = 0; i < 3; i++)
+        {
+            Unit = GameObject.Find($"Advisers_Player").transform.GetChild(i).gameObject;
+            if (Who == (UnitParametrs.AdviserType)Enum.Parse(typeof(UnitParametrs.AdviserType), Unit.name)) break;
+        }
     }
 
     public void CreateOrder()

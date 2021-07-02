@@ -2821,7 +2821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6210688172462224321
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3296,7 +3296,7 @@ MonoBehaviour:
   PrefabUnit: {fileID: 4729995348501913135, guid: 36d5df30e9dcc854c93726220e8452db, type: 3}
   PrefabUI: {fileID: 8023584527650226606}
   World: {fileID: 0}
-  Region: 1
+  Region: 2
   Who: 2
   Unit: {fileID: 0}
   Options: {fileID: 287739165801513719}
@@ -3484,6 +3484,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3793402370668842173, guid: 5b6a658e794a44f4ea006811b63ac8c4, type: 3}
       propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905449227252105240, guid: 5b6a658e794a44f4ea006811b63ac8c4, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6699947263714168168, guid: 5b6a658e794a44f4ea006811b63ac8c4, type: 3}

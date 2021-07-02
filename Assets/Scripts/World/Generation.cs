@@ -32,6 +32,7 @@ public class Generation : MonoBehaviour
             GameObject Player = Instantiate(PrefabList[0], GameObject.Find("Main Camera").transform);
             Player.name = "Player";
             GameObject AI = new GameObject("AI");
+            AI.AddComponent<MyKingdom>();
             PlayerList[0] = Player;
             PlayerList[1] = AI;
         }
@@ -44,6 +45,11 @@ public class Generation : MonoBehaviour
             for (int i = 0; i < RegionList.Length; i++)
             {
                 GenerateRegion(RegionList[i], i);
+                if (i < 2)
+                {
+                    SpawnAdvisers(GameObject.FindGameObjectsWithTag("Castle")[i].transform, PlayerList[i]);
+                    PlayerList[i].GetComponent<MyKingdom>().MyCastle = GameObject.FindGameObjectsWithTag("Castle")[i];
+                }
             }
         }
     }
@@ -102,20 +108,22 @@ public class Generation : MonoBehaviour
     private void SpawnAdvisers(Transform Castle, GameObject Parent)
     {
         GameObject Advisers = new GameObject($"Advisers_{Parent.name}");
-        Advisers.gameObject.transform.SetParent(Parent.transform);
         Vector3 Pos = new Vector3(Castle.position.x - 1.5f, Castle.position.y + 2.5f, -1);
         for (int i = 0; i < 3; i++)
         {
             GameObject Adviser = Instantiate(PrefAdviser, Pos, Quaternion.identity, Advisers.transform);
+            Adviser.name = "Capitan";
             if (i == 1)
             {
                 Adviser.GetComponent<SpriteRenderer>().sprite = GameObject.Find("World").GetComponent<WorldList>().UnitSprites[1];
                 Adviser.GetComponent<Unit>().Parametrs.TypeOfAdviser = UnitParametrs.AdviserType.Spy;
+                Adviser.name = "Spy";
             }
             else if (i == 2)
             {
                 Adviser.GetComponent<SpriteRenderer>().sprite = GameObject.Find("World").GetComponent<WorldList>().UnitSprites[2];
                 Adviser.GetComponent<Unit>().Parametrs.TypeOfAdviser = UnitParametrs.AdviserType.Architect;
+                Adviser.name = "Architect";
             }
             
             Pos.x += 1.5f;

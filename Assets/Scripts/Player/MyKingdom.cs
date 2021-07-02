@@ -8,6 +8,8 @@ public class MyKingdom : MonoBehaviour
 
 
     public List<GameObject> MyDomain;
+    //Castle of Player
+    public GameObject MyCastle;
     //Amount of regions on the Map
     private int Amount;
     //Amount of regions of player kingdome
@@ -16,6 +18,9 @@ public class MyKingdom : MonoBehaviour
     private int TempMyAmount = 0;
     private GameObject[] Regions;
     private int TempMonth;
+
+    [SerializeField]
+    private List<GameObject> MyUnits;
     //Army
     private List<Soldiers> SoldiresTypes;
     private int[] AmountOfSoldires;
@@ -24,9 +29,8 @@ public class MyKingdom : MonoBehaviour
     void Start()
     {
         World = GameObject.Find("World");
-        Regions = GameObject.FindGameObjectsWithTag("Region");
+        Regions = World.GetComponent<World>().Regions;
         Amount = Regions.Length;
-        print(Amount);
         TempMonth = World.GetComponent<WorldTime>().GetTime()[1];
 
         SoldiresTypes = World.GetComponent<WorldList>().SoldiresDB;
@@ -95,6 +99,7 @@ public class MyKingdom : MonoBehaviour
         return Income;
     }
 
+    #region Army
     public void AddSoldires(int[] add)
     {
         for (int i = 0; AmountOfSoldires.Length > i; i++)
@@ -133,6 +138,7 @@ public class MyKingdom : MonoBehaviour
         }
     }
 
+    
     public int[] AllSoldires()
     {
         return AmountOfSoldires;
@@ -157,4 +163,22 @@ public class MyKingdom : MonoBehaviour
         }
         return Sum;
     }
+    #endregion
+
+    #region UnitList
+    public void AddUnit(GameObject NewUnit)
+    {
+        MyUnits.Add(NewUnit);
+    }
+
+    public List<GameObject> GetUnit()
+    {
+        return MyUnits;
+    }
+
+    public void DelUnit(int i)
+    {
+        MyUnits.RemoveAt(i);
+    }
+    #endregion
 }
