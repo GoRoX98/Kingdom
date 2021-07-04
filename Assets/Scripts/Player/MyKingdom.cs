@@ -5,6 +5,7 @@ using UnityEngine;
 public class MyKingdom : MonoBehaviour
 {
     private GameObject World;
+    private int PlayerId;
 
 
     public List<GameObject> MyDomain;
@@ -25,6 +26,12 @@ public class MyKingdom : MonoBehaviour
     private List<Soldiers> SoldiresTypes;
     private int[] AmountOfSoldires;
     private int[] SoldiersInArmy;
+
+    private void Awake()
+    {
+        if (gameObject.name == "AI") PlayerId = 0;
+        else PlayerId = 1;
+    }
 
     void Start()
     {
@@ -61,7 +68,7 @@ public class MyKingdom : MonoBehaviour
         MyAmount = 0;
         for (int i = 0; i < Amount; i++)
         {
-            if (World.GetComponent<Generation>().Regions[i].InfoOwner() == 1)
+            if (World.GetComponent<Generation>().Regions[i].InfoOwner() == 1 && PlayerId == 1)
             {
                 MyAmount++;
                 if (MyDomain.Count < MyAmount) MyDomain.Add(Regions[i]);

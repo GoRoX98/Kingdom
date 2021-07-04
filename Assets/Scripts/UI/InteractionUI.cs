@@ -61,13 +61,15 @@ public class InteractionUI : MonoBehaviour
 
     public void NewOrder()
     {
+        if (GameObject.Find("Info Tab").transform.Find("Description").Find("NumRegion").gameObject.activeSelf == true)
+            GetComponent<NewOrder>().Region = GameObject.Find("Info Tab").transform.Find("Description").Find("NumRegion").GetComponent<Dropdown>().value;
         gameObject.GetComponent<NewOrder>().CreateOrder();
     }
 
     public void OrderUI()
     {
         GameObject PrefabUI = GameObject.Find("Canvas").GetComponent<PlayerUI>().PrefsUI[1];
-        PrefabUI.transform.Find("Info Tab").gameObject.transform.Find("Who").gameObject.SetActive(true);
+        PrefabUI.transform.Find("Info Tab").transform.Find("Who").gameObject.SetActive(true);
         PrefabUI.GetComponent<NewOrder>().Region = GameObject.Find("Canvas Region").GetComponent<ListUI>().Id;
         Instantiate(PrefabUI);
     }
@@ -78,7 +80,7 @@ public class InteractionUI : MonoBehaviour
     /// <param name="RegionId"></param>
     /// <param name="Type"></param>
     /// <param name="Unit"></param>
-    public void UnitOrderUI(int RegionId, UnitParametrs.AdviserType Type, GameObject Unit)
+    public void AdviserOrderUI(int RegionId, UnitParametrs.AdviserType Type, GameObject Unit)
     {
         GameObject PrefabUI = GameObject.Find("Canvas").GetComponent<PlayerUI>().PrefsUI[1];
         PrefabUI.GetComponent<NewOrder>().Region = RegionId;
@@ -87,6 +89,25 @@ public class InteractionUI : MonoBehaviour
         PrefabUI.transform.Find("Info Tab").gameObject.transform.Find("Who").gameObject.SetActive(false);
         PrefabUI.transform.GetComponent<InteractionUI>().Parent = Unit;
         PrefabUI.transform.Find("Info Tab").gameObject.transform.Find("For").GetComponent<Text>().text = $"For {Type}";
+        PrefabUI.GetComponent<NewOrder>().SetOptions();
+        Instantiate(PrefabUI);
+    }
+
+    public void ArmyOrder(GameObject Army)
+    {
+        GameObject PrefabUI = GameObject.Find("Canvas").GetComponent<PlayerUI>().PrefsUI[1];
+        GameObject FieldRegion = PrefabUI.transform.Find("Info Tab").transform.Find("Description").Find("NumRegion").gameObject;
+        FieldRegion.SetActive(true);
+        FieldRegion.GetComponent<Dropdown>().ClearOptions();
+        for (int i = 0; i < GameObject.Find("World").GetComponent<World>().AmountOfRegions; i++)
+        {
+            FieldRegion.GetComponent<Dropdown>().options.Add(new Dropdown.OptionData($"{i}"));
+        }
+        PrefabUI.GetComponent<NewOrder>().Unit = Army;
+        PrefabUI.GetComponent<NewOrder>().Who = UnitParametrs.AdviserType.None;
+        PrefabUI.transform.Find("Info Tab").gameObject.transform.Find("Who").gameObject.SetActive(false);
+        PrefabUI.transform.GetComponent<InteractionUI>().Parent = Army;
+        PrefabUI.transform.Find("Info Tab").gameObject.transform.Find("For").GetComponent<Text>().text = $"For Army";
         PrefabUI.GetComponent<NewOrder>().SetOptions();
         Instantiate(PrefabUI);
     }

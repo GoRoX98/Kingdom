@@ -49,17 +49,23 @@ public class NewOrder : MonoBehaviour
             Options.options[2].text = "Boost";
             Options.options[3].text = "Repair";
         }
-        if (Who == UnitParametrs.AdviserType.Capitan)
+        else if (Who == UnitParametrs.AdviserType.Capitan)
         {
             Options.options[1].text = "Boost";
             Options.options[2].text = "Explore";
             Options.options[3].text = "Repair";
         }
-        if (Who == UnitParametrs.AdviserType.Spy)
+        else if (Who == UnitParametrs.AdviserType.Spy)
         {
             Options.options[1].text = "Spy";
             Options.options[2].text = "Subotage";
             Options.options[3].text = "Explore";
+        }
+        else
+        {
+            Options.options[1].text = "Attack";
+            Options.options[2].text = "Raid";
+            Options.options[3].text = "Capture";
         }
     }
 

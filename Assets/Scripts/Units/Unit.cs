@@ -116,7 +116,8 @@ public class Unit : MonoBehaviour
         //Deselect others
         Player.GetComponent<Action>().TrigerLMB = true;
         SelectUnit = true;
-        if (Type != UnitType.Messenger)     GameObject.Find("Canvas").GetComponent<InteractionUI>().UnitOrderUI(1, Parametrs.TypeOfAdviser, gameObject);
+        if (Type == UnitType.Advisor) GameObject.Find("Canvas").GetComponent<InteractionUI>().AdviserOrderUI(1, Parametrs.TypeOfAdviser, gameObject);
+        else if (Type == UnitType.Army) GameObject.Find("Canvas").GetComponent<InteractionUI>().ArmyOrder(gameObject);
     }
 
     private void RegionPosition()

@@ -71,8 +71,16 @@ public class Generation : MonoBehaviour
             if (i == 0 || i + 1 == length)
             {
                 Transform Castle = SpawnCastle(Region);
-                if (i == 0) SpawnAdvisers(Castle, PlayerList[0]);
-                else if (i + 1 == length) SpawnAdvisers(Castle, PlayerList[1]);
+                if (i == 0)
+                {
+                    PlayerList[0].GetComponent<MyKingdom>().MyCastle = Castle.gameObject;
+                    SpawnAdvisers(Castle, PlayerList[0]);
+                }
+                else if (i + 1 == length)
+                {
+                    PlayerList[1].GetComponent<MyKingdom>().MyCastle = Castle.gameObject;
+                    SpawnAdvisers(Castle, PlayerList[1]);
+                }
             }
             Pos.x += 6;
         }
