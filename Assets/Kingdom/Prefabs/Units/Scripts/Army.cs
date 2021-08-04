@@ -74,9 +74,7 @@ public class Army : MonoBehaviour
         {
             ArmyStructure.People += ArmyStructure.ArmyStruct[i];
             ArmyStructure.SumDmg += ArmyStructure.ArmyStruct[i] * ArmyStructure.Soldires[i].Damage;
-            ArmyStructure.SumFood += ArmyStructure.ArmyStruct[i] * ArmyStructure.Soldires[i].WeekFood;
-            ArmyStructure.SumGold += ArmyStructure.ArmyStruct[i] * ArmyStructure.Soldires[i].WeekGold;
-            ArmyStructure.SumLife += ArmyStructure.ArmyStruct[i] * ArmyStructure.Soldires[i].Life;
+            ArmyStructure.SumLife += ArmyStructure.ArmyStruct[i] * ArmyStructure.Soldires[i].Deffense;
         }
     }
 }

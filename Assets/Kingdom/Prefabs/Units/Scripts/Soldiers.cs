@@ -6,16 +6,19 @@ using UnityEngine;
 public class Soldiers
 {
     public string Name;
-    public float Life;
     public float Damage;
+    public float Deffense;
     public float Speed;
     public float HireGold;
-    public float WeekFood;
-    public float WeekGold;
+    public float HireFood;
+    public float HireTime;
+    //WIP (Legacy) - now without cost per week
+/*    public float WeekFood;
+    public float WeekGold;*/
 
     public float[] GetParam()
     {
-        float[] parametrs = new float[] { Life, Damage, WeekFood, WeekGold };
+        float[] parametrs = new float[] { Deffense, Damage};
         return parametrs;
     }
 }
