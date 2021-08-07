@@ -3,22 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Soldiers
+public struct Soldiers
 {
     public string Name;
     public float Damage;
     public float Deffense;
     public float Speed;
+    public float Morale;
     public float HireGold;
     public float HireFood;
     public float HireTime;
-    //WIP (Legacy) - now without cost per week
-/*    public float WeekFood;
-    public float WeekGold;*/
 
-    public float[] GetParam()
+    public Soldiers(string Name, float Damage, float Deffense, float Speed, float Morale, float HireGold, float HireFood, float HireTime)
     {
-        float[] parametrs = new float[] { Deffense, Damage};
-        return parametrs;
+        this.Name = Name;
+        this.Damage = Damage;
+        this.Deffense = Deffense;
+        this.Speed = Speed;
+        this.Morale = Morale;
+        this.HireGold = HireGold;
+        this.HireFood = HireFood;
+        this.HireTime = HireTime;
     }
+/*        public float[] GetParam()
+    {
+        float[] parametrs = new float[] { Deffense, Damage };
+        return parametrs;
+    }*/
+ 
 }

@@ -1,3 +1,4 @@
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,10 +19,49 @@ public class WorldList : MonoBehaviour
     //Sprites for units
     public List<Sprite> UnitSprites = new List<Sprite>();
 
+    //Test DB
+    public Soldiers[] TestDB;
     void Awake()
     {
         BuildingsList.Add(new StructBuild ("Village", 0, 10, 20, 100, 50, 20, 50, 0));
         BuildingsList.Add(new StructBuild ("Farm", 25, 10, 0, 100, 50, 20, 50, 1));
         BuildingsList.Add(new StructBuild ("Mine", -10, 30, -5, 100, 50, 20, 50, 2));
+
+        SaveOLDDB();
+        //LoadSoldiersDB();
+    }
+
+    private void LoadSoldiersDB()
+    {
+        string Json = File.ReadAllText(Application.dataPath + "/Kingdom/Resources/Soldiers.json");
+
+        TestDB = JsonUtility.FromJson<Soldiers[]>(Json);
+
+
+        print(TestDB.Length);
+        print(Json);
+    }
+
+    private void SaveOLDDB()
+    {
+        int i = SoldiresDB.Count;
+        Soldiers[] Test = new Soldiers[] {};
+        for (int b = 0; b<i; b++)
+        {
+            Test[b] = new Soldiers
+            (
+                SoldiresDB[b].Name,
+                SoldiresDB[b].Damage,
+                SoldiresDB[b].Deffense,
+                SoldiresDB[b].Speed,
+                SoldiresDB[b].Morale,
+                SoldiresDB[b].HireGold,
+                SoldiresDB[b].HireFood,
+                SoldiresDB[b].HireTime
+            );
+        }
+
+        string json = JsonUtility.ToJson(Test, true);
+        File.WriteAllText(Application.dataPath + "/Kingdom/Resources/TestFile.json", json);
     }
 }

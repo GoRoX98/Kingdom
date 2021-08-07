@@ -3,52 +3,57 @@
 	[	
 		{
 			"Name": "Peasants",
-			"Maintenance": {"Gold": 2, "Food": 1},
-			"Dmg": 20,
-			"Def": 10,
+			"HireGold": 2,
+			"HireFood": 1,
+			"Damage": 20,
+			"Deffense": 10,
 			"Morale": 0.5,
 			"Speed": 1,
-			"Train": 10
+			"HireTime": 10
 		},
 
 		{
 			"Name": "Militia",
-			"Maintenance": {"Gold": 4, "Food": 1},
-			"Dmg": 30,
-			"Def": 30,
+			"HireGold": 4,
+			"HireFood": 1,
+			"Damage": 30,
+			"Deffense": 30,
 			"Morale": 1,
 			"Speed": 1.1,
-			"Train": 15
+			"HireTime": 15
 		},
 
 		{
 			"Name": "Infantrymen",
-			"Maintenance": {"Gold": 10, "Food": 2},
-			"Dmg": 60,
-			"Def": 40,
+			"HireGold": 10,
+			"HireFood": 2,
+			"Damage": 60,
+			"Deffense": 40,
 			"Morale": 1.5,
 			"Speed": 1.2,
-			"Train": 25
+			"HireTime": 25
 		},
 
 		{
 			"Name": "Archers",
-			"Maintenance": {"Gold": 8, "Food": 2},
-			"Dmg": 35,
-			"Def": 55,
+			"HireGold": 8,
+			"HireFood": 2,
+			"Damage": 35,
+			"Deffense": 55,
 			"Morale": 1,
 			"Speed": 0.9,
-			"Train": 20
+			"HireTime": 20
 		},
 
 		{
 			"Name": "Knights",
-			"Maintenance": {"Gold": 20, "Food": 5},
-			"Dmg": 120,
-			"Def": 80,
+			"HireGold": 20,
+			"HireFood": 5,
+			"Damage": 120,
+			"Deffense": 80,
 			"Morale": 2,
 			"Speed": 1.5,
-			"Train": 60
+			"HireTime": 60
 		}
 	]
 }

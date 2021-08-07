@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,7 +15,7 @@ public class Hire : MonoBehaviour
     }
 
     /// <summary>
-    /// Hire function
+    /// Hire function. Rewrite it!!!
     /// </summary>
     /// <param name="Amount">How many soldiers of this type wonna hire</param>
     /// <param name="Who">Type of soldire</param>

@@ -86,32 +86,52 @@ MonoBehaviour:
   - February
   SoldiresDB:
   - Name: Recruit
-    Life: 5
     Damage: 2
+    Deffense: 0
     Speed: 1
+    Morale: 0
     HireGold: 0.1
-    WeekFood: 0.1
-    WeekGold: 0.05
+    HireFood: 0
+    HireTime: 0
   - Name: Archer
-    Life: 4
     Damage: 3
+    Deffense: 0
     Speed: 1
+    Morale: 0
     HireGold: 0.15
-    WeekFood: 0.1
-    WeekGold: 0.1
+    HireFood: 0
+    HireTime: 0
   - Name: Cavalary
-    Life: 10
     Damage: 5
+    Deffense: 0
     Speed: 2
+    Morale: 0
     HireGold: 0.3
-    WeekFood: 0.2
-    WeekGold: 0.15
+    HireFood: 0
+    HireTime: 0
   UnitSprites:
   - {fileID: 21300000, guid: 4d83d0d535dd27649a34d988520e4471, type: 3}
   - {fileID: 21300000, guid: 71294dc426a4d3846bb102c2eeef4af7, type: 3}
   - {fileID: 21300000, guid: bbe7cc09e62773d4181f3167a0460fdf, type: 3}
   - {fileID: 21300000, guid: 923fc43e51239e040bf8ebaf01b7d2da, type: 3}
   - {fileID: 0}
+  TestDB:
+  - Name: Test
+    Damage: 42
+    Deffense: 0
+    Speed: 532
+    Morale: 2
+    HireGold: 0
+    HireFood: 2
+    HireTime: 2
+  - Name: Test2
+    Damage: 2
+    Deffense: 0
+    Speed: 1
+    Morale: 2
+    HireGold: 0
+    HireFood: 2
+    HireTime: 2
 --- !u!114 &2022322601981494890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,3 +167,4 @@ MonoBehaviour:
   PrefabList:
   - {fileID: 6718527193126819689, guid: 02acfdb643bdb1148861b71cbe27e09b, type: 3}
   PVP: 0
+  PlayerList: []
