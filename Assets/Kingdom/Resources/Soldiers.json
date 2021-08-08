@@ -1,6 +1,5 @@
 {
-	"Soldires":
-	[	
+	"Soldiers": [	
 		{
 			"Name": "Peasants",
 			"HireGold": 2,
@@ -11,7 +10,6 @@
 			"Speed": 1,
 			"HireTime": 10
 		},
-
 		{
 			"Name": "Militia",
 			"HireGold": 4,
@@ -22,7 +20,6 @@
 			"Speed": 1.1,
 			"HireTime": 15
 		},
-
 		{
 			"Name": "Infantrymen",
 			"HireGold": 10,
@@ -33,7 +30,6 @@
 			"Speed": 1.2,
 			"HireTime": 25
 		},
-
 		{
 			"Name": "Archers",
 			"HireGold": 8,
@@ -44,7 +40,6 @@
 			"Speed": 0.9,
 			"HireTime": 20
 		},
-
 		{
 			"Name": "Knights",
 			"HireGold": 20,

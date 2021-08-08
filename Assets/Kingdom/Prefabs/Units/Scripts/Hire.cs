@@ -24,10 +24,10 @@ public class Hire : MonoBehaviour
         Type = gameObject.GetComponent<InteractionUI>().Parametrs.Integer[0];
         int amount = int.Parse(Amount.text);
         print(amount);
-        Soldiers Soldire = World.GetComponent<WorldList>().SoldiresDB[Type];
+        Soldiers Soldire = World.GetComponent<WorldList>().Resources.Soldiers[Type];
         StructEconomy Economy = Player.GetComponent<Economy>().PlayerEconomy;
         float SumGold = amount * Soldire.HireGold;
-        int[] add = new int[World.GetComponent<WorldList>().SoldiresDB.Count];
+        int[] add = new int[World.GetComponent<WorldList>().Resources.Soldiers.Count];
 
         if (Economy.GetResources()[1] >= SumGold)
         {

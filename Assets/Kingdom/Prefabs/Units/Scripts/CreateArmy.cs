@@ -27,6 +27,7 @@ public class CreateArmy : MonoBehaviour
         HowMany = new int[amount.Length];
     }
 
+    // Todo: на данный момент работает криво, переписать в приоритете.
     void FixedUpdate()
     {
         for (int i = 0; sliders.Length > i; i++)
@@ -58,7 +59,7 @@ public class CreateArmy : MonoBehaviour
         if (check == true)
         {
             Army.GetComponent<Army>().ArmyStructure.ArmyStruct = HowMany;
-            Army.GetComponent<Army>().ArmyStructure.Soldires = GameObject.Find("World").GetComponent<WorldList>().SoldiresDB;
+            Army.GetComponent<Army>().ArmyStructure.Soldires = GameObject.Find("World").GetComponent<WorldList>().Resources.Soldiers;
             GameObject Castle = GameObject.FindGameObjectWithTag("Player").GetComponent<MyKingdom>().MyCastle;
             Vector3 Pos = new Vector3(Castle.transform.position.x, Castle.transform.position.y - 1f, Castle.transform.position.z - 1f);
             Instantiate(Army, Pos, Quaternion.identity, GameObject.Find("World").GetComponent<Transform>());

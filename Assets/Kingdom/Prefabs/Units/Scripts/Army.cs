@@ -12,7 +12,7 @@ public class Army : MonoBehaviour
     void Awake()
     {
         World = GameObject.Find("World");
-        ArmyStructure.Soldires = GameObject.Find("World").GetComponent<WorldList>().SoldiresDB;
+        ArmyStructure.Soldires = GameObject.Find("World").GetComponent<WorldList>().Resources.Soldiers;
     }
 
 

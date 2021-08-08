@@ -23,6 +23,7 @@ public class MyKingdom : MonoBehaviour
     [SerializeField]
     private List<GameObject> MyUnits;
     //Army
+    [SerializeField]
     private List<Soldiers> SoldiresTypes;
     private int[] AmountOfSoldires;
     private int[] SoldiersInArmy;
@@ -40,7 +41,7 @@ public class MyKingdom : MonoBehaviour
         Amount = Regions.Length;
         TempMonth = World.GetComponent<WorldTime>().GetTime()[1];
 
-        SoldiresTypes = World.GetComponent<WorldList>().SoldiresDB;
+        SoldiresTypes = World.GetComponent<WorldList>().Resources.Soldiers;
         AmountOfSoldires = new int[SoldiresTypes.Count];
         for (int i = 0; SoldiresTypes.Count > i; i++)
         {
