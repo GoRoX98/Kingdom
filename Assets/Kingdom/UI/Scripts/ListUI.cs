@@ -20,4 +20,7 @@ public class ListUI : MonoBehaviour
 
     //UI objects of info window
     public List<GameObject> WindowObj = new List<GameObject>();
+
+    //Texts GO
+    public List<Text> TextFields;
 }

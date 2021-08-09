@@ -10,10 +10,10 @@ public class StructArmy
     public int People;
     public List<Soldiers> Soldires;
     public int[] ArmyStruct;
-    public float SumLife;
+    public float SumDef;
     public float SumDmg;
     public float SumGold;
     public float SumFood;
-
+    public float Speed;
     
 }

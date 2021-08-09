@@ -81,11 +81,12 @@
     <Compile Include="Assets\Kingdom\Prefabs\Units\Scripts\StructArmy.cs" />
     <Compile Include="Assets\Kingdom\Scripts\Main\Orders\OrderStruct.cs" />
     <Compile Include="Assets\Kingdom\UI\Scripts\objInfo.cs" />
-    <Compile Include="Assets\Kingdom\Prefabs\Units\Scripts\Hire.cs" />
+    <Compile Include="Assets\Kingdom\UI\Prefabs\Castle\Scripts\Hire.cs" />
     <Compile Include="Assets\Kingdom\Prefabs\Units\Scripts\UnitParametrs.cs" />
     <Compile Include="Assets\Kingdom\Architecture\Prefabs\World\Scripts\Generation.cs" />
     <Compile Include="Assets\Kingdom\Prefabs\Buildings\Scripts\Build.cs" />
     <Compile Include="Assets\Kingdom\Architecture\Prefabs\World\Scripts\Region.cs" />
+    <Compile Include="Assets\Kingdom\UI\Prefabs\Castle\Scripts\SoldiersList.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Жуки ебаные.txt" />

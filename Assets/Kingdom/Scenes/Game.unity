@@ -190,6 +190,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2022322601981494891, guid: f1d240671e4d4764191d1827ca171a6c, type: 3}
+      propertyPath: Resources.Soldiers.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1d240671e4d4764191d1827ca171a6c, type: 3}
 --- !u!1 &209172085
@@ -358,6 +362,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8733768533516542088, guid: f62ca1691331cb644b5b7d8a717bea6d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -327.9699
+      objectReference: {fileID: 0}
     - target: {fileID: 8733768534261734189, guid: f62ca1691331cb644b5b7d8a717bea6d, type: 3}
       propertyPath: m_SortingOrder
       value: 0

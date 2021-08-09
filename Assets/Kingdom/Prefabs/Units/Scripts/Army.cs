@@ -5,7 +5,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class Army : MonoBehaviour
-{public StructArmy ArmyStructure = new StructArmy();
+{
+    public StructArmy ArmyStructure = new StructArmy();
 
     private GameObject World;
 
@@ -68,13 +69,13 @@ public class Army : MonoBehaviour
         ArmyStructure.SumDmg = 0;
         ArmyStructure.SumFood = 0;
         ArmyStructure.SumGold = 0;
-        ArmyStructure.SumLife = 0;
+        ArmyStructure.SumDef = 0;
         print("ArmyStruct");
         for (int i = 0; ArmyStructure.Soldires.Count > i; i++)
         {
             ArmyStructure.People += ArmyStructure.ArmyStruct[i];
             ArmyStructure.SumDmg += ArmyStructure.ArmyStruct[i] * ArmyStructure.Soldires[i].Damage;
-            ArmyStructure.SumLife += ArmyStructure.ArmyStruct[i] * ArmyStructure.Soldires[i].Deffense;
+            ArmyStructure.SumDef += ArmyStructure.ArmyStruct[i] * ArmyStructure.Soldires[i].Deffense;
         }
     }
 }
