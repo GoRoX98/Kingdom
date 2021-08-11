@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7732251251494377419}
   - component: {fileID: 2778563938437870068}
   - component: {fileID: 6104863354599442241}
+  - component: {fileID: 6281417847034306894}
   m_Layer: 5
   m_Name: Soldier
   m_TagString: Untagged
@@ -103,6 +104,24 @@ MonoBehaviour:
   - {fileID: 602820016449506744}
   - {fileID: 399959743156874451}
   - {fileID: 3308567920382815205}
+--- !u!114 &6281417847034306894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239913420532839265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c9669ece485104fa07966336aa118c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Child: {fileID: 0}
+  Parent: {fileID: 0}
+  Parametrs:
+    Integer: 
+    String: []
+  UseParametrs: 0
 --- !u!1 &1003135441738124556
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,13 +260,13 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3587298412681167962}
-          m_TargetAssemblyTypeName: Hire, Assembly-CSharp
+        - m_Target: {fileID: 6281417847034306894}
+          m_TargetAssemblyTypeName: InteractionUI, Assembly-CSharp
           m_MethodName: Less
-          m_Mode: 1
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 3923542123499413372}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1618,13 +1637,13 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3587298412681167962}
-          m_TargetAssemblyTypeName: Hire, Assembly-CSharp
+        - m_Target: {fileID: 6281417847034306894}
+          m_TargetAssemblyTypeName: InteractionUI, Assembly-CSharp
           m_MethodName: More
-          m_Mode: 1
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 3923542123499413372}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 

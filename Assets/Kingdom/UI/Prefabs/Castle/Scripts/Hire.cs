@@ -47,16 +47,5 @@ public class Hire : MonoBehaviour
         else print("Process of Hire dont work?");
     }
 
-    public void More()
-    {
-        int newAmount = int.Parse(Amount.text) + 10;
-        Amount.text = newAmount.ToString();
-    }
 
-    public void Less()
-    {
-        int newAmount = int.Parse(Amount.text);
-        if (newAmount > 0) newAmount = newAmount - 10;
-        Amount.text = newAmount.ToString();
-    }
 }

@@ -10,37 +10,29 @@ public class CreateArmy : MonoBehaviour
 
     public GameObject World;
     public GameObject Player;
+    public GameObject Prefab;
+    public GameObject Parent;
 
     public List<Text> fields;
-    private Scrollbar[] sliders;
     //Amount soldires in kingdom
     private int[] amount;
     //How many hire
     private int[] HowMany;
 
-    void Start()
+    private void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         World = GameObject.Find("World");
         amount = Player.GetComponent<MyKingdom>().AllSoldires();
-        sliders = GameObject.FindObjectsOfType<Scrollbar>();
         HowMany = new int[amount.Length];
     }
 
-    // Todo: на данный момент работает криво, переписать в приоритете.
-    void FixedUpdate()
+    void Start()
     {
-        for (int i = 0; sliders.Length > i; i++)
-        {
-            if (sliders[i].value * 100 > 0) HowMany[i] =  amount[i] / 100 * Convert.ToInt32(sliders[i].value * 100);
-            else if (Convert.ToInt32(sliders[i].value * 100) > amount[i])
-            {
-                HowMany[i] = amount[i];
-            }
-
-            fields[i].text = HowMany[i].ToString();
-        }
+        List<Soldiers> soldiersList = World.GetComponent<WorldList>().Resources.Soldiers;
     }
+
+
 
     /// <summary>
     /// Spawn Army GameObject.

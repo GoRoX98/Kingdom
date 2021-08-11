@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -110,5 +111,23 @@ public class InteractionUI : MonoBehaviour
         PrefabUI.transform.Find("Info Tab").gameObject.transform.Find("For").GetComponent<Text>().text = $"For Army";
         PrefabUI.GetComponent<NewOrder>().SetOptions();
         Instantiate(PrefabUI);
+    }
+
+    public void More(Text Amount)
+    {
+        int newAmount = int.Parse(Amount.text);
+        if (gameObject.transform.Find("MaxAmount") == true)
+        {
+            int max = int.Parse(gameObject.transform.Find("MaxAmount").GetComponent<Text>().text);
+            if (max > newAmount) Amount.text = (newAmount + 10).ToString();
+        }
+        else Amount.text = (newAmount + 10).ToString();
+    }
+
+    public void Less(Text Amount)
+    {
+        int newAmount = int.Parse(Amount.text);
+        if (newAmount > 0) newAmount = newAmount - 10;
+        Amount.text = newAmount.ToString();
     }
 }
