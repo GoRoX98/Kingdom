@@ -30,8 +30,20 @@ public class CreateArmy : MonoBehaviour
     void Start()
     {
         List<Soldiers> soldiersList = World.GetComponent<WorldList>().Resources.Soldiers;
+        Parent = gameObject.transform.Find("Canvas").Find("Hire").Find("Soldiers Layout").gameObject;
+        listGenerator(soldiersList.Count, soldiersList);
     }
 
+    private void listGenerator(int i, List<Soldiers> soldiersList)
+    {
+        int[] soldiresAmount = Player.GetComponent<MyKingdom>().AllSoldires();
+        for (int b = 0; b < i; b++)
+        {
+            GameObject newObj = Instantiate(Prefab, Parent.transform);
+            newObj.GetComponent<ListUI>().TextFields[2].text = soldiersList[b].Name;
+            newObj.GetComponent<ListUI>().TextFields[1].text = soldiresAmount[b].ToString();
+        }
+    }
 
 
     /// <summary>
@@ -42,21 +54,11 @@ public class CreateArmy : MonoBehaviour
     /// <param name="Army">GO of Army on the Scene</param>
     public void HireArmy(GameObject Army)
     {
-        bool check = false;
-        for (int i =0; HowMany.Length > i; i++)
-        {
-            if (HowMany[i] > 0) check = true;
-        }
-
-        if (check == true)
-        {
-            Army.GetComponent<Army>().ArmyStructure.ArmyStruct = HowMany;
-            Army.GetComponent<Army>().ArmyStructure.Soldires = GameObject.Find("World").GetComponent<WorldList>().Resources.Soldiers;
-            GameObject Castle = GameObject.FindGameObjectWithTag("Player").GetComponent<MyKingdom>().MyCastle;
-            Vector3 Pos = new Vector3(Castle.transform.position.x, Castle.transform.position.y - 1f, Castle.transform.position.z - 1f);
-            Instantiate(Army, Pos, Quaternion.identity, GameObject.Find("World").GetComponent<Transform>());
-        }
-        else print("Cant create");
+        Army.GetComponent<Army>().ArmyStructure.ArmyStruct = HowMany;
+        Army.GetComponent<Army>().ArmyStructure.Soldires = GameObject.Find("World").GetComponent<WorldList>().Resources.Soldiers;
+        GameObject Castle = GameObject.FindGameObjectWithTag("Player").GetComponent<MyKingdom>().MyCastle;
+        Vector3 Pos = new Vector3(Castle.transform.position.x, Castle.transform.position.y - 1f, Castle.transform.position.z - 1f);
+        Instantiate(Army, Pos, Quaternion.identity, GameObject.Find("World").GetComponent<Transform>());
     }
 
 }

@@ -395,6 +395,7 @@ GameObject:
   - component: {fileID: 1524836251159066780}
   - component: {fileID: 246560102734386497}
   - component: {fileID: 4438074241277396981}
+  - component: {fileID: 2565769798346823161}
   m_Layer: 0
   m_Name: Soldier Army
   m_TagString: Untagged
@@ -483,6 +484,27 @@ MonoBehaviour:
     Integer: 
     String: []
   UseParametrs: 0
+--- !u!114 &2565769798346823161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763795477378346023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d1a37a8ba082c4d8906f3171b16b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: 0
+  RegionInfo: []
+  Clock: []
+  WindowInfo: []
+  WindowObj: []
+  TextFields:
+  - {fileID: 4000266660494802704}
+  - {fileID: 9033688924824636218}
+  - {fileID: 2906065904643581349}
 --- !u!1 &8156324774312811389
 GameObject:
   m_ObjectHideFlags: 0

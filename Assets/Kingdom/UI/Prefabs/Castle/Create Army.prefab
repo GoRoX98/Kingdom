@@ -90,6 +90,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   World: {fileID: 0}
   Player: {fileID: 0}
+  Prefab: {fileID: 5763795477378346023, guid: 436e91ab32b8f7b49bd6c5d59f60552d, type: 3}
+  Parent: {fileID: 0}
   fields:
   - {fileID: 0}
   - {fileID: 0}
