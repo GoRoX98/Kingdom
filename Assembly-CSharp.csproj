@@ -87,6 +87,7 @@
     <Compile Include="Assets\Kingdom\Architecture\Prefabs\World\Scripts\Generation.cs" />
     <Compile Include="Assets\Kingdom\Prefabs\Buildings\Scripts\Build.cs" />
     <Compile Include="Assets\Kingdom\Architecture\Prefabs\World\Scripts\Region.cs" />
+    <Compile Include="Assets\Kingdom\Architecture\Prefabs\World\Scripts\GeneratorParametrs.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Жуки ебаные.txt" />
