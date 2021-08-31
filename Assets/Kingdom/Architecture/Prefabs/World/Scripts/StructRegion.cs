@@ -5,19 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public struct StructRegion
 {
-    enum BiomeType
-    {
-        Plain,
-        Forest,
-        Swamp,
-        Hill
-    }
-
-    enum BiomeMod
-    {
-        River,
-        Chernozem
-    }
 
     private int RegionId;
     private string RegionName;

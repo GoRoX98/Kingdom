@@ -71,6 +71,7 @@
     <Compile Include="Assets\Kingdom\Prefabs\Units\Scripts\Movement.cs" />
     <Compile Include="Assets\Kingdom\Architecture\Prefabs\World\Scripts\World.cs" />
     <Compile Include="Assets\Kingdom\Architecture\Prefabs\World\Scripts\WorldTime.cs" />
+    <Compile Include="Assets\Kingdom\Architecture\Prefabs\World\Scripts\Generation\GeneratorParametrs.cs" />
     <Compile Include="Assets\Kingdom\Architecture\Prefabs\Scripts\Action.cs" />
     <Compile Include="Assets\Kingdom\Scripts\Main\Orders\NewOrder.cs" />
     <Compile Include="Assets\Kingdom\Architecture\Prefabs\Scripts\MyKingdom.cs" />
@@ -81,13 +82,13 @@
     <Compile Include="Assets\Kingdom\UI\Prefabs\Castle\Scripts\SoldiersList.cs" />
     <Compile Include="Assets\Kingdom\Prefabs\Units\Scripts\StructArmy.cs" />
     <Compile Include="Assets\Kingdom\Scripts\Main\Orders\OrderStruct.cs" />
+    <Compile Include="Assets\Kingdom\Architecture\Prefabs\World\Scripts\Generation\Biomes.cs" />
     <Compile Include="Assets\Kingdom\UI\Scripts\objInfo.cs" />
     <Compile Include="Assets\Kingdom\UI\Prefabs\Castle\Scripts\Hire.cs" />
     <Compile Include="Assets\Kingdom\Prefabs\Units\Scripts\UnitParametrs.cs" />
-    <Compile Include="Assets\Kingdom\Architecture\Prefabs\World\Scripts\Generation.cs" />
+    <Compile Include="Assets\Kingdom\Architecture\Prefabs\World\Scripts\Generation\Generation.cs" />
     <Compile Include="Assets\Kingdom\Prefabs\Buildings\Scripts\Build.cs" />
     <Compile Include="Assets\Kingdom\Architecture\Prefabs\World\Scripts\Region.cs" />
-    <Compile Include="Assets\Kingdom\Architecture\Prefabs\World\Scripts\GeneratorParametrs.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Жуки ебаные.txt" />

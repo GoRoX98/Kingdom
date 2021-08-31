@@ -1,11 +1,13 @@
+using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Generation : MonoBehaviour
 {
-    //Regions prefabs
-    public List<GameObject> RegionsPrefabs = new List<GameObject>();
+    [SerializeField]
+    GeneratorParametrs Parametrs = new GeneratorParametrs();
     //List of Regions on the map with self type (structure).
     public List<StructRegion> Regions = new List<StructRegion>();
     //Transform of Regions
@@ -14,16 +16,37 @@ public class Generation : MonoBehaviour
     public GameObject PrefAdviser;
     //Other prefabs
     public List<GameObject> PrefabList = new List<GameObject>();
-    //1 or 2 players
-    public bool PVP = false;
     //Player List
     public GameObject[] PlayerList;
+
+    //Попытка реализовать равномерное распределение генерации непосредственно в редакторе (шансы)
+/*    private void OnValidate()
+    {
+        int sum = 0;
+        int difference = 0;
+
+        if (!gameObject.activeInHierarchy) return;
+        if (Parametrs.biomeChance.Count > 1)
+        {
+            for (int i = 0; i < Parametrs.biomeChance.Count; i++) sum += Parametrs.biomeChance[i];
+
+            if (sum != 100)
+            {
+                difference = (100 - sum) / Parametrs.biomeChance.Count;
+                for (int i = 0; i < Parametrs.biomeChance.Count; i++)
+                {
+                    Parametrs.biomeChance[i] += difference;
+                }
+            }
+        }
+    }*/
 
 
     private void Awake()
     {
         PlayerList = new GameObject[2];
-        if (PVP == true)
+
+        if (Parametrs.PVP == true)
         {
 
         }
@@ -65,7 +88,7 @@ public class Generation : MonoBehaviour
     {
         for (int i = 0; i < length; i++)
         {
-            GameObject Region = Instantiate(RegionsPrefabs[0], Pos, Quaternion.identity, gameObject.transform);
+            GameObject Region = Instantiate(Parametrs.RegionsPrefabs[0], Pos, Quaternion.identity, gameObject.transform);
             Region.name = $"Region {i}";
             GenerateRegion(Region, i);
             if (i == 0 || i + 1 == length)
@@ -108,7 +131,7 @@ public class Generation : MonoBehaviour
     private Transform SpawnCastle(GameObject ThisRegion)
     {
         Vector3 Pos = new Vector3(ThisRegion.transform.position.x, ThisRegion.transform.position.y + 1.9f, -1);
-        GameObject Castle = Instantiate(RegionsPrefabs[1], Pos, Quaternion.identity, ThisRegion.transform);
+        GameObject Castle = Instantiate(Parametrs.RegionsPrefabs[1], Pos, Quaternion.identity, ThisRegion.transform);
         Castle.transform.localScale = new Vector3(2, 1.5f, 1);
         return Castle.transform;
     }

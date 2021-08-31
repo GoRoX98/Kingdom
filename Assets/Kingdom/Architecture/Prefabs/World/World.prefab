@@ -84,54 +84,14 @@ MonoBehaviour:
   - December
   - Junuary
   - February
-  SoldiresDB:
-  - Name: Recruit
-    Damage: 2
-    Deffense: 0
-    Speed: 1
-    Morale: 0
-    HireGold: 0.1
-    HireFood: 0
-    HireTime: 0
-  - Name: Archer
-    Damage: 3
-    Deffense: 0
-    Speed: 1
-    Morale: 0
-    HireGold: 0.15
-    HireFood: 0
-    HireTime: 0
-  - Name: Cavalary
-    Damage: 5
-    Deffense: 0
-    Speed: 2
-    Morale: 0
-    HireGold: 0.3
-    HireFood: 0
-    HireTime: 0
   UnitSprites:
   - {fileID: 21300000, guid: 4d83d0d535dd27649a34d988520e4471, type: 3}
   - {fileID: 21300000, guid: 71294dc426a4d3846bb102c2eeef4af7, type: 3}
   - {fileID: 21300000, guid: bbe7cc09e62773d4181f3167a0460fdf, type: 3}
   - {fileID: 21300000, guid: 923fc43e51239e040bf8ebaf01b7d2da, type: 3}
   - {fileID: 0}
-  TestDB:
-  - Name: Test
-    Damage: 42
-    Deffense: 0
-    Speed: 532
-    Morale: 2
-    HireGold: 0
-    HireFood: 2
-    HireTime: 2
-  - Name: Test2
-    Damage: 2
-    Deffense: 0
-    Speed: 1
-    Morale: 2
-    HireGold: 0
-    HireFood: 2
-    HireTime: 2
+  Resources:
+    Soldiers: []
 --- !u!114 &2022322601981494890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,13 +118,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e748c313a53ae9946992466fff58bc03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RegionsPrefabs:
-  - {fileID: 6592559300711724439, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
-  - {fileID: 388017803192487402, guid: 606520a50fd5f6f42bf61e8e6946915b, type: 3}
+  Parametrs:
+    PVP: 0
+    biomeChance: []
+    RegionsPrefabs:
+    - {fileID: 6592559300711724439, guid: 89c0ac5ff00ed154984f3227f7a370a8, type: 3}
+    - {fileID: 388017803192487402, guid: 606520a50fd5f6f42bf61e8e6946915b, type: 3}
   Regions: []
   RegionsTransform: []
   PrefAdviser: {fileID: 174995102346175043, guid: b2fe2fba046dfc94b8f13870d95a7975, type: 3}
   PrefabList:
   - {fileID: 6718527193126819689, guid: 02acfdb643bdb1148861b71cbe27e09b, type: 3}
-  PVP: 0
   PlayerList: []

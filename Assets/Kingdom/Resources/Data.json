@@ -50,5 +50,27 @@
 			"Speed": 1.5,
 			"HireTime": 60
 		}
+	],
+	
+	"Biomes": [	
+		{
+			"Name": "Peasants",
+			"Description": "Desc",
+			"Speed": 1,
+			"BuildingCostMod": 1,
+			"BuildingSpeedMod": 1,
+			"StealthMod": 1,
+			"AmbushMod": 1
+		},
+		
+		{
+			"Name": "Test2",
+			"Description": "Desc",
+			"Speed": 1,
+			"BuildingCostMod": 1,
+			"BuildingSpeedMod": 1,
+			"StealthMod": 1,
+			"AmbushMod": 1
+		}
 	]
 }

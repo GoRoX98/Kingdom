@@ -24,6 +24,7 @@ public class WorldList : MonoBehaviour
     public class CoreList
     {
         public List<Soldiers> Soldiers;
+        public List<Biomes> Biomes;
     }
 
     void Awake()
@@ -32,12 +33,12 @@ public class WorldList : MonoBehaviour
         BuildingsList.Add(new StructBuild ("Farm", 25, 10, 0, 100, 50, 20, 50, 1));
         BuildingsList.Add(new StructBuild ("Mine", -10, 30, -5, 100, 50, 20, 50, 2));
 
-        LoadSoldiersDB();
+        LoadDB();
     }
 
-    private void LoadSoldiersDB()
+    private void LoadDB()
     {
-        string Json = File.ReadAllText(Application.dataPath + "/Kingdom/Resources/Soldiers.json");
+        string Json = File.ReadAllText(Application.dataPath + "/Kingdom/Resources/Data.json");
         Resources = JsonUtility.FromJson<CoreList>(Json);
     }
 }

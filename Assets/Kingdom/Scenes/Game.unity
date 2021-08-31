@@ -138,6 +138,42 @@ PrefabInstance:
       propertyPath: PrefAdviser
       value: 
       objectReference: {fileID: 174995102346175043, guid: b2fe2fba046dfc94b8f13870d95a7975, type: 3}
+    - target: {fileID: -6860854311884802542, guid: f1d240671e4d4764191d1827ca171a6c, type: 3}
+      propertyPath: biomeChanceSave.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6860854311884802542, guid: f1d240671e4d4764191d1827ca171a6c, type: 3}
+      propertyPath: biomeChanceSave.Array.data[0]
+      value: 9.98
+      objectReference: {fileID: 0}
+    - target: {fileID: -6860854311884802542, guid: f1d240671e4d4764191d1827ca171a6c, type: 3}
+      propertyPath: biomeChanceSave.Array.data[1]
+      value: 6.68
+      objectReference: {fileID: 0}
+    - target: {fileID: -6860854311884802542, guid: f1d240671e4d4764191d1827ca171a6c, type: 3}
+      propertyPath: Parametrs.biomeChance.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -6860854311884802542, guid: f1d240671e4d4764191d1827ca171a6c, type: 3}
+      propertyPath: Parametrs.biomeChance.Array.data[0]
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: -6860854311884802542, guid: f1d240671e4d4764191d1827ca171a6c, type: 3}
+      propertyPath: Parametrs.biomeChance.Array.data[1]
+      value: 66
+      objectReference: {fileID: 0}
+    - target: {fileID: -6860854311884802542, guid: f1d240671e4d4764191d1827ca171a6c, type: 3}
+      propertyPath: Parametrs.biomeChance.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6860854311884802542, guid: f1d240671e4d4764191d1827ca171a6c, type: 3}
+      propertyPath: Parametrs.biomeChance.Array.data[3]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -6860854311884802542, guid: f1d240671e4d4764191d1827ca171a6c, type: 3}
+      propertyPath: Parametrs.biomeChance.Array.data[4]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2022322601981494886, guid: f1d240671e4d4764191d1827ca171a6c, type: 3}
       propertyPath: m_Name
       value: World
@@ -188,6 +224,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2022322601981494889, guid: f1d240671e4d4764191d1827ca171a6c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022322601981494891, guid: f1d240671e4d4764191d1827ca171a6c, type: 3}
+      propertyPath: Resources.Biomes.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2022322601981494891, guid: f1d240671e4d4764191d1827ca171a6c, type: 3}
